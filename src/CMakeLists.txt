@@ -3,86 +3,86 @@ include_directories( animations debug )
 
 # Sources
 # please keep this list alphabetically sorted for clarity
-set( oxygen_gtk_SOURCES
-    animations/oxygenanimations.cpp
-    animations/oxygenarrowstatedata.cpp
-    animations/oxygenbackgroundhintengine.cpp
-    animations/oxygenbaseengine.cpp
-    animations/oxygencomboboxdata.cpp
-    animations/oxygencomboboxentrydata.cpp
-    animations/oxygendialogengine.cpp
-    animations/oxygenflatwidgetengine.cpp
-    animations/oxygenfollowmousedata.cpp
-    animations/oxygenhook.cpp
-    animations/oxygenhoverdata.cpp
-    animations/oxygeninnershadowdata.cpp
-    animations/oxygenmainwindowdata.cpp
-    animations/oxygenmenubarstatedata.cpp
-    animations/oxygenmenustatedata.cpp
-    animations/oxygenmenuitemengine.cpp
-    animations/oxygenmenuitemdata.cpp
-    animations/oxygenpaneddata.cpp
-    animations/oxygensignal.cpp
-    animations/oxygenscrollbardata.cpp
-    animations/oxygenscrollbarstatedata.cpp
-    animations/oxygenscrolledwindowdata.cpp
-    animations/oxygentabwidgetdata.cpp
-    animations/oxygentabwidgetstatedata.cpp
-    animations/oxygentimeline.cpp
-    animations/oxygentimelineserver.cpp
-    animations/oxygentimer.cpp
-    animations/oxygentoolbarstatedata.cpp
-    animations/oxygentreeviewdata.cpp
-    animations/oxygentreeviewengine.cpp
-    animations/oxygentreeviewstatedata.cpp
-    animations/oxygenwidgetsizedata.cpp
-    animations/oxygenwidgetstatedata.cpp
-    animations/oxygenwidgetstateengine.cpp
-    debug/oxygenwidgetexplorer.cpp
-    oxygenapplicationname.cpp
-    oxygenargbhelper.cpp
-    oxygencairocontext.cpp
-    oxygencairoutils.cpp
-    oxygencoloreffect.cpp
-    oxygencolorutils.cpp
-    oxygenfontinfo.cpp
-    oxygengtkcellinfo.cpp
-    oxygengtkicons.cpp
-    oxygengtkrc.cpp
-    oxygengtktypenames.cpp
-    oxygengtkutils.cpp
-    oxygenloghandler.cpp
-    oxygenobjectcounter.cpp
-    oxygenobjectcountermap.cpp
-    oxygenoption.cpp
-    oxygenoptionmap.cpp
-    oxygenpalette.cpp
-    oxygenpathlist.cpp
-    oxygenpropertynames.cpp
-    oxygenqtsettings.cpp
-    oxygenrcstyle.cpp
-    oxygenrgba.cpp
-    oxygenshadowconfiguration.cpp
-    oxygenshadowhelper.cpp
-    oxygenstyle.cpp
-    oxygenstylehelper.cpp
-    oxygenstyleoptions.cpp
-    oxygenstylewrapper.cpp
-    oxygentaboptions.cpp
-    oxygentheme.cpp
-    oxygentileset.cpp
-    oxygenwindecobutton.cpp
-    oxygenwindecooptions.cpp
-    oxygenwindowmanager.cpp
-    oxygenwindowshadow.cpp
+set( carbon_gtk_SOURCES
+    animations/carbonanimations.cpp
+    animations/carbonarrowstatedata.cpp
+    animations/carbonbackgroundhintengine.cpp
+    animations/carbonbaseengine.cpp
+    animations/carboncomboboxdata.cpp
+    animations/carboncomboboxentrydata.cpp
+    animations/carbondialogengine.cpp
+    animations/carbonflatwidgetengine.cpp
+    animations/carbonfollowmousedata.cpp
+    animations/carbonhook.cpp
+    animations/carbonhoverdata.cpp
+    animations/carboninnershadowdata.cpp
+    animations/carbonmainwindowdata.cpp
+    animations/carbonmenubarstatedata.cpp
+    animations/carbonmenustatedata.cpp
+    animations/carbonmenuitemengine.cpp
+    animations/carbonmenuitemdata.cpp
+    animations/carbonpaneddata.cpp
+    animations/carbonsignal.cpp
+    animations/carbonscrollbardata.cpp
+    animations/carbonscrollbarstatedata.cpp
+    animations/carbonscrolledwindowdata.cpp
+    animations/carbontabwidgetdata.cpp
+    animations/carbontabwidgetstatedata.cpp
+    animations/carbontimeline.cpp
+    animations/carbontimelineserver.cpp
+    animations/carbontimer.cpp
+    animations/carbontoolbarstatedata.cpp
+    animations/carbontreeviewdata.cpp
+    animations/carbontreeviewengine.cpp
+    animations/carbontreeviewstatedata.cpp
+    animations/carbonwidgetsizedata.cpp
+    animations/carbonwidgetstatedata.cpp
+    animations/carbonwidgetstateengine.cpp
+    debug/carbonwidgetexplorer.cpp
+    carbonapplicationname.cpp
+    carbonargbhelper.cpp
+    carboncairocontext.cpp
+    carboncairoutils.cpp
+    carboncoloreffect.cpp
+    carboncolorutils.cpp
+    carbonfontinfo.cpp
+    carbongtkcellinfo.cpp
+    carbongtkicons.cpp
+    carbongtkrc.cpp
+    carbongtktypenames.cpp
+    carbongtkutils.cpp
+    carbonloghandler.cpp
+    carbonobjectcounter.cpp
+    carbonobjectcountermap.cpp
+    carbonoption.cpp
+    carbonoptionmap.cpp
+    carbonpalette.cpp
+    carbonpathlist.cpp
+    carbonpropertynames.cpp
+    carbonqtsettings.cpp
+    carbonrcstyle.cpp
+    carbonrgba.cpp
+    carbonshadowconfiguration.cpp
+    carbonshadowhelper.cpp
+    carbonstyle.cpp
+    carbonstylehelper.cpp
+    carbonstyleoptions.cpp
+    carbonstylewrapper.cpp
+    carbontaboptions.cpp
+    carbontheme.cpp
+    carbontileset.cpp
+    carbonwindecobutton.cpp
+    carbonwindecooptions.cpp
+    carbonwindowmanager.cpp
+    carbonwindowshadow.cpp
 )
 
-add_library( oxygen-gtk SHARED ${oxygen_gtk_SOURCES} )
+add_library( carbon-gtk SHARED ${carbon_gtk_SOURCES} )
 
 # Add debug cflags
 set( CMAKE_CXX_FLAGS " -Wall -g ${CMAKE_CXX_FLAGS}" )
 set( CMAKE_C_FLAGS " -Wall -g ${CMAKE_C_FLAGS}" )
 
-target_link_libraries( oxygen-gtk ${GTK_LIBRARIES} ${CAIRO_LIBRARIES} ${X11_X11_LIB} )
+target_link_libraries( carbon-gtk ${GTK_LIBRARIES} ${CAIRO_LIBRARIES} ${X11_X11_LIB} )
 
-install( TARGETS oxygen-gtk DESTINATION ${INSTALL_PATH_GTK_ENGINES} )
+install( TARGETS carbon-gtk DESTINATION ${INSTALL_PATH_GTK_ENGINES} )

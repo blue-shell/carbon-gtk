@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,20 +18,20 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenarrowstatedata.h"
+#include "carbonarrowstatedata.h"
 #include "../config.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
     void ArrowStateData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ArrowStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ArrowStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _target = widget;
@@ -42,8 +42,8 @@ namespace Oxygen
     //_____________________________________________
     void ArrowStateData::disconnect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ArrowStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ArrowStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _upArrowData._timeLine.disconnect();
@@ -61,9 +61,9 @@ namespace Oxygen
     {
         if( state == _state ) return false;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ArrowStateData::Data::updateState - "
+            << "Carbon::ArrowStateData::Data::updateState - "
             << " state: " << state
             << std::endl;
         #endif

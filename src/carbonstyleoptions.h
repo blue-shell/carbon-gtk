@@ -1,8 +1,8 @@
-#ifndef oxygenstyleoptions_h
-#define oxygenstyleoptions_h
+#ifndef carbonstyleoptions_h
+#define carbonstyleoptions_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,14 +21,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenflags.h"
-#include "oxygengtkutils.h"
-#include "oxygenpalette.h"
+#include "carbonflags.h"
+#include "carbongtkutils.h"
+#include "carbonpalette.h"
 
 #include <iostream>
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! internal option flags to pass arguments around
@@ -98,6 +98,6 @@ namespace Oxygen
 
 }
 
-OX_DECLARE_OPERATORS_FOR_FLAGS( Oxygen::StyleOptions )
+OX_DECLARE_OPERATORS_FOR_FLAGS( Carbon::StyleOptions )
 
 #endif

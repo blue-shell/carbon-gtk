@@ -1,7 +1,7 @@
-#ifndef oxygenmenubarstateengine_h
-#define oxygenmenubarstateengine_h
+#ifndef carbonmenubarstateengine_h
+#define carbonmenubarstateengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,14 +20,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenanimationengine.h"
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygenmenubarstatedata.h"
+#include "carbonanimationengine.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbonmenubarstatedata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

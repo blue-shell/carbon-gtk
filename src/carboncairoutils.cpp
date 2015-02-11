@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,16 +18,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencairoutils.h"
-#include "oxygencairocontext.h"
-#include "oxygenrgba.h"
+#include "carboncairoutils.h"
+#include "carboncairocontext.h"
+#include "carbonrgba.h"
 
 #ifdef GDK_WINDOWING_X11
 #include <cairo/cairo-xlib.h>
 #endif
 
 #include <cmath>
-namespace Oxygen
+namespace Carbon
 {
 
     //__________________________________________________________________

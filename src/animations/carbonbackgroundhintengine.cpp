@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,7 +18,7 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenbackgroundhintengine.h"
+#include "carbonbackgroundhintengine.h"
 #include "config.h"
 
 #include <iostream>
@@ -28,7 +28,7 @@
 #include <X11/Xatom.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________________________
@@ -43,8 +43,8 @@ namespace Oxygen
         if( display )
         {
 
-            _backgroundGradientAtom = XInternAtom( GDK_DISPLAY_XDISPLAY( display ), "_KDE_OXYGEN_BACKGROUND_GRADIENT", False);
-            _backgroundPixmapAtom = XInternAtom( GDK_DISPLAY_XDISPLAY( display ), "_KDE_OXYGEN_BACKGROUND_PIXMAP", False);
+            _backgroundGradientAtom = XInternAtom( GDK_DISPLAY_XDISPLAY( display ), "_KDE_CARBON_BACKGROUND_GRADIENT", False);
+            _backgroundPixmapAtom = XInternAtom( GDK_DISPLAY_XDISPLAY( display ), "_KDE_CARBON_BACKGROUND_PIXMAP", False);
 
         } else {
 
@@ -97,8 +97,8 @@ namespace Oxygen
         }
 
         // register
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::BackgroundHintEngine::registerWidget - (" << topLevel << "," << id << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::BackgroundHintEngine::registerWidget - (" << topLevel << "," << id << ")" << std::endl;
         #endif
 
         // insert in set
@@ -127,8 +127,8 @@ namespace Oxygen
             if( ftor( *iter ) )
             {
 
-                #if OXYGEN_DEBUG
-                std::cerr << "Oxygen::BackgroundHintEngine::unregisterWidget - (" << iter->_widget << "," << iter->_id << ")" << std::endl;
+                #if CARBON_DEBUG
+                std::cerr << "Carbon::BackgroundHintEngine::unregisterWidget - (" << iter->_widget << "," << iter->_id << ")" << std::endl;
                 #endif
 
                 _data.erase( iter++ );

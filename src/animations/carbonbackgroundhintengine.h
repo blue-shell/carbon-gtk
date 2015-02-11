@@ -1,7 +1,7 @@
-#ifndef oxygenbackgroundhintengine_h
-#define oxygenbackgroundhintengine_h
+#ifndef carbonbackgroundhintengine_h
+#define carbonbackgroundhintengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,8 +20,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "../oxygenflags.h"
-#include "oxygenbaseengine.h"
+#include "../carbonflags.h"
+#include "carbonbaseengine.h"
 
 #include <gtk/gtk.h>
 #include <set>
@@ -32,7 +32,7 @@
 #include <X11/Xdefs.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! forward declaration

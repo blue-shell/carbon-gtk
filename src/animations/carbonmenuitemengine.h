@@ -1,7 +1,7 @@
-#ifndef oxygenmenuitemengine_h
-#define oxygenmenuitemengine_h
+#ifndef carbonmenuitemengine_h
+#define carbonmenuitemengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,13 +21,13 @@
 */
 
 
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygenmenuitemdata.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbonmenuitemdata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

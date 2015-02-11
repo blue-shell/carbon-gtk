@@ -1,5 +1,5 @@
 /*
-* oxygenwidgetexplorer.h
+* carbonwidgetexplorer.h
 * printout widget information on button press, for debugging
 * -------------------
 *
@@ -24,12 +24,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwidgetexplorer.h"
+#include "carbonwidgetexplorer.h"
 #include "config.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
     //___________________________________________________________
     WidgetExplorer::WidgetExplorer( void ):
@@ -37,8 +37,8 @@ namespace Oxygen
         _hooksInitialized( false )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WidgetExplorer::WidgetExplorer" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WidgetExplorer::WidgetExplorer" << std::endl;
         #endif
 
     }
@@ -48,8 +48,8 @@ namespace Oxygen
     WidgetExplorer::~WidgetExplorer( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WidgetExplorer::~WidgetExplorer" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WidgetExplorer::~WidgetExplorer" << std::endl;
         #endif
 
         _buttonPressHook.disconnect();
@@ -81,7 +81,7 @@ namespace Oxygen
         GtkWidget* widget( GTK_WIDGET( g_value_get_object( params ) ) );
         if( !GTK_IS_WIDGET( widget ) ) return TRUE;
 
-        std::cerr << "Oxygen::WidgetExplorer::buttonPressHook -";
+        std::cerr << "Carbon::WidgetExplorer::buttonPressHook -";
         int row( 0 );
         for( GtkWidget* parent = widget; parent; parent = gtk_widget_get_parent( parent ) )
         {

@@ -1,7 +1,7 @@
-#ifndef oxygenoption_h
-#define oxygenoption_h
+#ifndef carbonoption_h
+#define carbonoption_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -32,7 +32,7 @@
 #include <sstream>
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! used to store values from kde-like rc file
@@ -70,7 +70,7 @@ namespace Oxygen
         const std::string& value( void ) const
         { return _value; }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         //! set filename from where option was read
         void setFile( const std::string& file )
         { _file = file; }
@@ -95,7 +95,7 @@ namespace Oxygen
 
         };
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         protected:
         const std::string& file( void ) const
         { return _file; }
@@ -117,7 +117,7 @@ namespace Oxygen
         {
             out << option.tag() << "=" << option.value();
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             if( !option.file().empty() )
             { out << " (" << option.file() << ")"; }
             #endif

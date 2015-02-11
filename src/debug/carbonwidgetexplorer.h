@@ -1,8 +1,8 @@
-#ifndef oxygenwidgetexplorer_h
-#define oxygenwidgetexplorer_h
+#ifndef carbonwidgetexplorer_h
+#define carbonwidgetexplorer_h
 
 /*
-* oxygenwidgetexplorer.h
+* carbonwidgetexplorer.h
 * printout widget information on button press, for debugging
 * -------------------
 *
@@ -27,12 +27,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenhook.h"
+#include "carbonhook.h"
 
 #include <gtk/gtk.h>
 
 // constructor
-namespace Oxygen
+namespace Carbon
 {
 
     class WidgetExplorer

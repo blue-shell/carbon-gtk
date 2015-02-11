@@ -1,7 +1,7 @@
-#ifndef oxygenstylewrapper_h
-#define oxygenstylewrapper_h
+#ifndef carbonstylewrapper_h
+#define carbonstylewrapper_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -24,17 +24,17 @@
 */
 
 #include <gtk/gtk.h>
-#include "oxygenxulinfo.h"
+#include "carbonxulinfo.h"
 
-// oxygen style struct
-struct OxygenStyle
+// carbon style struct
+struct CarbonStyle
 { GtkStyle parent; };
 
-// oxygen style class struct
-struct OxygenStyleClass
+// carbon style class struct
+struct CarbonStyleClass
 {  GtkStyleClass parent; };
 
-namespace Oxygen
+namespace Carbon
 {
     class StyleWrapper
     {
@@ -47,7 +47,7 @@ namespace Oxygen
         //! version type registration
         /*!
         it is used to let an external program retrieve
-        the oxygen-gtk version that it uses, if any
+        the carbon-gtk version that it uses, if any
         */
         static void registerVersionType( void );
 
@@ -65,10 +65,10 @@ namespace Oxygen
         protected:
 
         //! instance initialization
-        static void instanceInit( OxygenStyle* );
+        static void instanceInit( CarbonStyle* );
 
         //! class initialization
-        static void classInit( OxygenStyleClass* );
+        static void classInit( CarbonStyleClass* );
 
         private:
 

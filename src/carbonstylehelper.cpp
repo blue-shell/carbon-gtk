@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,16 +18,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenstylehelper.h"
-#include "oxygencairocontext.h"
-#include "oxygencairoutils.h"
-#include "oxygencolorutils.h"
-#include "oxygenrgba.h"
+#include "carbonstylehelper.h"
+#include "carboncairocontext.h"
+#include "carboncairoutils.h"
+#include "carboncolorutils.h"
+#include "carbonrgba.h"
 
 #include <cmath>
 #include <gdk/gdk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //__________________________________________________________________
@@ -38,16 +38,16 @@ namespace Oxygen
     //__________________________________________________________________
     StyleHelper::StyleHelper( void )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleHelper::StyleHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleHelper::StyleHelper" << std::endl;
         #endif
     }
 
     //__________________________________________________________________
     StyleHelper::~StyleHelper( void )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleHelper::~StyleHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleHelper::~StyleHelper" << std::endl;
         #endif
     }
 
@@ -67,9 +67,9 @@ namespace Oxygen
         if( screen && window )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::StyleHelper::initializeRefSurface - "
+                << "Carbon::StyleHelper::initializeRefSurface - "
                 << " screen: " << screen
                 << " window: " << window
                 << std::endl;
@@ -85,9 +85,9 @@ namespace Oxygen
             Destroy widget (since gtk_widget_realize would otherwise crash)
             Fallback to ImageSurface
             */
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::StyleHelper::initializeRefSurface - "
+                << "Carbon::StyleHelper::initializeRefSurface - "
                 << " No valid screen found to create X11 surface."
                 << " Falling back to Cairo Image surface."
                 << std::endl;
@@ -1226,7 +1226,7 @@ namespace Oxygen
     //____________________________________________________________________
     void StyleHelper::renderDot( cairo_t* context, const ColorUtils::Rgba& base, int x, int y ) const
     {
-        // Reduce diameter to make dots look more like in Oxygen-Qt
+        // Reduce diameter to make dots look more like in Carbon-Qt
         const double diameter( 1.8 - 0.35 );
         const ColorUtils::Rgba light( ColorUtils::lightColor( base ) );
         const ColorUtils::Rgba dark( ColorUtils::darkColor( base ).dark(130) );

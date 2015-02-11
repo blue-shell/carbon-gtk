@@ -1,8 +1,8 @@
-#ifndef oxygencairosurfacecache_h
-#define oxygencairosurfacecache_h
+#ifndef carboncairosurfacecache_h
+#define carboncairosurfacecache_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,12 +21,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencache.h"
-#include "oxygencairosurface.h"
+#include "carboncache.h"
+#include "carboncairosurface.h"
 
 #include <cairo.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
 

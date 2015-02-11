@@ -1,8 +1,8 @@
-#ifndef oxygencache_h
-#define oxygencache_h
+#ifndef carboncache_h
+#define carboncache_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -27,7 +27,7 @@
 #include <map>
 #include <deque>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! simple firt-in first-out stl based cache

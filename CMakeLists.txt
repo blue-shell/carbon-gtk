@@ -1,4 +1,4 @@
-project( oxygen-gtk )
+project( carbon-gtk )
 
 cmake_minimum_required(VERSION 2.4)
 
@@ -6,10 +6,10 @@ cmake_minimum_required(VERSION 2.4)
 # Define package generation
 ###########################
 
-set( CPACK_PACKAGE_NAME "oxygen-gtk2" )
-set( CPACK_SOURCE_PACKAGE_NAME "oxygen-gtk2" )
+set( CPACK_PACKAGE_NAME "carbon-gtk2" )
+set( CPACK_SOURCE_PACKAGE_NAME "carbon-gtk2" )
 set( CPACK_SOURCE_GENERATOR TBZ2 )
-set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "Oxygen Gtk2 theme" )
+set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "Carbon Gtk2 theme" )
 set( CPACK_PACKAGE_VENDOR "hugo.pereira@free.fr" )
 set( CPACK_PACKAGE_VERSION_MAJOR "1" )
 set( CPACK_PACKAGE_VERSION_MINOR "4" )
@@ -17,29 +17,29 @@ set( CPACK_PACKAGE_VERSION_PATCH "50" )
 set( CPACK_SOURCE_IGNORE_FILES "build" "^${PROJECT_SOURCE_DIR}.*/.git/" )
 
 ##################################
-# Define oxygen-gtk version string
+# Define carbon-gtk version string
 ##################################
 if( EXISTS "${CMAKE_SOURCE_DIR}/.git" )
     execute_process(COMMAND sh -c "cd ${CMAKE_SOURCE_DIR} && git describe 2>/dev/null"
-        OUTPUT_VARIABLE OXYGEN_VERSION
+        OUTPUT_VARIABLE CARBON_VERSION
         OUTPUT_STRIP_TRAILING_WHITESPACE)
 endif( EXISTS "${CMAKE_SOURCE_DIR}/.git" )
-STRING(COMPARE NOTEQUAL "${OXYGEN_VERSION}" "" OXYGEN_VERSION_DETECTED )
-if( NOT OXYGEN_VERSION_DETECTED )
-    set( OXYGEN_VERSION ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH} )
-endif( NOT OXYGEN_VERSION_DETECTED )
-message( "Detected oxygen version string: ${OXYGEN_VERSION}" )
+STRING(COMPARE NOTEQUAL "${CARBON_VERSION}" "" CARBON_VERSION_DETECTED )
+if( NOT CARBON_VERSION_DETECTED )
+    set( CARBON_VERSION ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH} )
+endif( NOT CARBON_VERSION_DETECTED )
+message( "Detected carbon version string: ${CARBON_VERSION}" )
 
-set( CPACK_SOURCE_PACKAGE_FILE_NAME "oxygen-gtk2-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}" )
+set( CPACK_SOURCE_PACKAGE_FILE_NAME "carbon-gtk2-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}" )
 include( CPack )
 ########################
 # Package specific flags
 ########################
 
 # Set to 1 to enable debugging information
-if( NOT DEFINED OXYGEN_DEBUG )
-    set( OXYGEN_DEBUG 0 )
-endif( NOT DEFINED OXYGEN_DEBUG )
+if( NOT DEFINED CARBON_DEBUG )
+    set( CARBON_DEBUG 0 )
+endif( NOT DEFINED CARBON_DEBUG )
 
 # Set to 1 to disable all signal hooks used for various features
 if( NOT DEFINED DISABLE_SIGNAL_HOOKS )
@@ -47,9 +47,9 @@ if( NOT DEFINED DISABLE_SIGNAL_HOOKS )
 endif( NOT DEFINED DISABLE_SIGNAL_HOOKS )
 
 # Set to 1 to enable debug logs regarding inner shadows
-if( NOT DEFINED OXYGEN_DEBUG_INNERSHADOWS )
-    set( OXYGEN_DEBUG_INNERSHADOWS 0 )
-endif( NOT DEFINED OXYGEN_DEBUG_INNERSHADOWS )
+if( NOT DEFINED CARBON_DEBUG_INNERSHADOWS )
+    set( CARBON_DEBUG_INNERSHADOWS 0 )
+endif( NOT DEFINED CARBON_DEBUG_INNERSHADOWS )
 
 # Set to 1 to build windeco test app (normal users rarely need this)
 if( NOT DEFINED BUILD_DECO_TEST )
@@ -57,15 +57,15 @@ if( NOT DEFINED BUILD_DECO_TEST )
 endif( NOT DEFINED BUILD_DECO_TEST )
 
 # Set to 1 to replace gtk stock icons
-# with oxygen-icons
-if( NOT DEFINED OXYGEN_ICON_HACK )
-    set( OXYGEN_ICON_HACK 1 )
-endif( NOT DEFINED OXYGEN_ICON_HACK )
+# with carbon-icons
+if( NOT DEFINED CARBON_ICON_HACK )
+    set( CARBON_ICON_HACK 1 )
+endif( NOT DEFINED CARBON_ICON_HACK )
 
 # Set to 1 to force KDE icons and fonts when running in non-KDE
-if( NOT DEFINED OXYGEN_FORCE_KDE_ICONS_AND_FONTS )
-    set( OXYGEN_FORCE_KDE_ICONS_AND_FONTS 1 )
-endif( NOT DEFINED OXYGEN_FORCE_KDE_ICONS_AND_FONTS )
+if( NOT DEFINED CARBON_FORCE_KDE_ICONS_AND_FONTS )
+    set( CARBON_FORCE_KDE_ICONS_AND_FONTS 1 )
+endif( NOT DEFINED CARBON_FORCE_KDE_ICONS_AND_FONTS )
 
 # Set to 1 to resize combobox list to compensate for combobox button glow width
 # (may result in flicker on combo popup)
@@ -143,7 +143,7 @@ else()
 endif()
 
 set( INSTALL_PATH_GTK_THEMES "${CMAKE_INSTALL_PREFIX}/share/themes" CACHE PATH "The directory in which to install the theme data( eg. /usr/share/themes )" )
-set( GTK_THEME_DIR ${INSTALL_PATH_GTK_THEMES}/oxygen-gtk )
+set( GTK_THEME_DIR ${INSTALL_PATH_GTK_THEMES}/carbon-gtk )
 
 # First emit all warnings in one place
 # Adjust flags based on gtk version and warn user if needed
@@ -156,12 +156,12 @@ endif( ENABLE_INNER_SHADOWS_HACK AND GTK_VERSION VERSION_LESS 2.24.2 )
 # summary
 #########
 message( "Flags: " )
-message( "  OXYGEN_DEBUG ${OXYGEN_DEBUG}" )
+message( "  CARBON_DEBUG ${CARBON_DEBUG}" )
 message( "  DISABLE_SIGNAL_HOOKS ${DISABLE_SIGNAL_HOOKS}" )
 message( "  BUILD_DECO_TEST ${BUILD_DECO_TEST}" )
-message( "  OXYGEN_DEBUG_INNERSHADOWS ${OXYGEN_DEBUG_INNERSHADOWS}" )
-message( "  OXYGEN_ICON_HACK ${OXYGEN_ICON_HACK}" )
-message( "  OXYGEN_FORCE_KDE_ICONS_AND_FONTS ${OXYGEN_FORCE_KDE_ICONS_AND_FONTS}" )
+message( "  CARBON_DEBUG_INNERSHADOWS ${CARBON_DEBUG_INNERSHADOWS}" )
+message( "  CARBON_ICON_HACK ${CARBON_ICON_HACK}" )
+message( "  CARBON_FORCE_KDE_ICONS_AND_FONTS ${CARBON_FORCE_KDE_ICONS_AND_FONTS}" )
 message( "  ENABLE_COMBOBOX_LIST_RESIZE ${ENABLE_COMBOBOX_LIST_RESIZE}" )
 message( "  ENABLE_INNER_SHADOWS_HACK ${ENABLE_INNER_SHADOWS_HACK}" )
 message( "  ENABLE_GROUPBOX_HACK ${ENABLE_GROUPBOX_HACK}" )

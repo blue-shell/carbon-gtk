@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,17 +19,17 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenstyle.h"
-#include "oxygencairocontext.h"
-#include "oxygencairoutils.h"
-#include "oxygencolorutils.h"
-#include "oxygenfontinfo.h"
-#include "oxygengtkutils.h"
-#include "oxygenmetrics.h"
-#include "oxygenwindecobutton.h"
-#include "oxygenwindowshadow.h"
+#include "carbonstyle.h"
+#include "carboncairocontext.h"
+#include "carboncairoutils.h"
+#include "carboncolorutils.h"
+#include "carbonfontinfo.h"
+#include "carbongtkutils.h"
+#include "carbonmetrics.h"
+#include "carbonwindecobutton.h"
+#include "carbonwindowshadow.h"
 
-#include "oxygengtktypenames.h"
+#include "carbongtktypenames.h"
 
 #include <algorithm>
 #include <cmath>
@@ -38,7 +38,7 @@
 #include <X11/Xatom.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     //__________________________________________________________________
@@ -47,8 +47,8 @@ namespace Oxygen
     {
         if( !_instance )
         {
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::Style::instance - creating new style." << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::Style::instance - creating new style." << std::endl;
             #endif
 
             _instance = new Style();
@@ -93,7 +93,7 @@ namespace Oxygen
         // reinitialize animations
         _animations.initialize( _settings );
 
-        if( flags&QtSettings::Oxygen )
+        if( flags&QtSettings::Carbon )
         {
 
             // widget explorer
@@ -328,7 +328,7 @@ namespace Oxygen
         bool renderingWindeco(context && !window);
 
         // the hard-coded metrics are copied for
-        // kdebase/workspace/libs/oxygen/oxygenhelper.cpp
+        // kdebase/workspace/libs/carbon/carbonhelper.cpp
         // vertical shift to account for window decoration
         const int yShift = 23;
 
@@ -371,8 +371,8 @@ namespace Oxygen
             if( !Gtk::gdk_map_to_toplevel( window, widget, &wx, &wy, &ww, &wh, true ) )
             {
 
-                #if OXYGEN_DEBUG
-                std::cerr << "Oxygen::Style::renderBackgroundGradient - map_to_toplevel failed" << std::endl;
+                #if CARBON_DEBUG
+                std::cerr << "Carbon::Style::renderBackgroundGradient - map_to_toplevel failed" << std::endl;
                 std::cerr << "original xywh: ("<<x<<","<<y<<","<<w<<","<<h<<")\n";
                 #endif
 
@@ -384,7 +384,7 @@ namespace Oxygen
                     cairo_translate(context,x,y);
                     if(clipRect)
                     {
-                        #if OXYGEN_DEBUG
+                        #if CARBON_DEBUG
                         std::cerr << "original clipRect: " << *clipRect << std::endl;
                         #endif
                         clipRect->x-=x;
@@ -393,8 +393,8 @@ namespace Oxygen
                         clipRect->height-=y;
                     }
                     x=y=0;
-                    #if OXYGEN_DEBUG
-                    std::cerr <<"Oxygen::Style::renderBackgroundGradient - setting openoffice-specific coords:"<<wx<<","<<wy<<","<<ww<<","<<wh<<"\n\n";
+                    #if CARBON_DEBUG
+                    std::cerr <<"Carbon::Style::renderBackgroundGradient - setting openoffice-specific coords:"<<wx<<","<<wy<<","<<ww<<","<<wh<<"\n\n";
                     #endif
                 }
                 else
@@ -516,7 +516,7 @@ namespace Oxygen
         bool renderingWindeco(context && !window);
 
         // the hard-coded metrics are copied for
-        // kdebase/workspace/libs/oxygen/oxygenhelper.cpp
+        // kdebase/workspace/libs/carbon/carbonhelper.cpp
         // vertical shift to account for window decoration
         const int yShift = 23;
 
@@ -2580,7 +2580,7 @@ namespace Oxygen
         const int xcenter( x + w/2 );
         const int ycenter( y + h/2 );
 
-        // expander 'radius' (copied from oxygen-qt)
+        // expander 'radius' (copied from carbon-qt)
         const int radius( ( 9 - 4 ) / 2 );
 
         // create context and translate to center
@@ -2706,7 +2706,7 @@ namespace Oxygen
                     && formatRet == 32) )
                 {
                     // if the window doesn't have this property set, it's likely
-                    // non-oxygenized, thus shouldn't have windeco bg gradient
+                    // non-carbonized, thus shouldn't have windeco bg gradient
                     gradient=false;
                 }
             }
@@ -2724,7 +2724,7 @@ namespace Oxygen
                 if( !left )
                 {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr<<"drawWindowDecoration: drawing left border; width: " << w << "; height: " << h << "; wopt: " << wopt << std::endl;
                     #endif
                     left=_helper.createSurface(sw,h);
@@ -2736,7 +2736,7 @@ namespace Oxygen
 
                 } else {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr << "drawWindowDecoration: using saved left border" << std::endl;
                     #endif
 
@@ -2758,7 +2758,7 @@ namespace Oxygen
                 if( !right )
                 {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr<<"drawWindowDecoration: drawing right border; width: " << w << "; height: " << h << "; wopt: " << wopt << std::endl;
                     #endif
 
@@ -2771,7 +2771,7 @@ namespace Oxygen
 
                 } else {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr << "drawWindowDecoration: using saved right border" << std::endl;
                     #endif
 
@@ -2795,7 +2795,7 @@ namespace Oxygen
                 if( !top )
                 {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr<<"drawWindowDecoration: drawing top border; width: " << w << "; height: " << h << "; wopt: " << wopt << std::endl;
                     #endif
                     top=_helper.createSurface(sw,sh);
@@ -2807,7 +2807,7 @@ namespace Oxygen
 
                 } else {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr << "drawWindowDecoration: using saved top border" << std::endl;
                     #endif
 
@@ -2880,7 +2880,7 @@ namespace Oxygen
                 if( !bottom)
                 {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr<<"drawWindowDecoration: drawing bottom border; width: " << w << "; height: " << h << "; wopt: " << wopt << std::endl;
                     #endif
                     bottom=_helper.createSurface(sw,sh);
@@ -2892,7 +2892,7 @@ namespace Oxygen
 
                 } else {
 
-                    #if OXYGEN_DEBUG
+                    #if CARBON_DEBUG
                     std::cerr << "drawWindowDecoration: using saved bottom border" << std::endl;
                     #endif
 
@@ -2930,7 +2930,7 @@ namespace Oxygen
 
         if( !(windowState & WinDeco::Active) && buttonState == WinDeco::Normal )
         {
-            // draw Oxygen-way disabled button on inactive window
+            // draw Carbon-way disabled button on inactive window
             buttonState=WinDeco::Disabled;
         }
         if( !(windowState & WinDeco::Alpha) && !(windowState & WinDeco::Maximized) )
@@ -3021,7 +3021,7 @@ namespace Oxygen
 
         // borders and connections to tabs
         // this is quite painfull and slipery code.
-        // the same is true with oxygen-qt
+        // the same is true with carbon-qt
         int offset = 2;
         int adjust = ( tabOptions&Xul ) ? 0:2;
         const TileSet::Tiles tabTiles( Style::tabTiles( side )  );
@@ -3195,7 +3195,7 @@ namespace Oxygen
 
         // borders and connections to tabs
         // this is quite painfull and slipery code.
-        // the same is true with oxygen-qt
+        // the same is true with carbon-qt
         int offset = 2;
         int adjust = (tabOptions&Xul) ? 0:2;
         const TileSet::Tiles tabTiles( Style::tabTiles( side )  );
@@ -3364,7 +3364,7 @@ namespace Oxygen
 
         // borders and connections to tabs
         // this is quite painfull and slipery code.
-        // the same is true with oxygen-qt
+        // the same is true with carbon-qt
         int offset = 2;
         int adjust = (tabOptions&Xul) ? 0:2;
         const TileSet::Tiles tabTiles( Style::tabTiles( side )  );
@@ -3710,7 +3710,7 @@ namespace Oxygen
 
             /*
             flat buttons have special handling of colors: hover and focus are both assigned
-            the hover color. This is consistent with oxygen-qt, though quite inconsistent with
+            the hover color. This is consistent with carbon-qt, though quite inconsistent with
             other widgets.
             */
             if(
@@ -4050,8 +4050,8 @@ namespace Oxygen
     void Style::fileChanged( GFileMonitor*, GFile* file, GFile*, GFileMonitorEvent event, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Style::fileChanged -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Style::fileChanged -"
             << " file: " << g_file_get_path( file )
             << " event: " << Gtk::TypeNames::fileMonitorEvent( event )
             << std::endl;
@@ -4116,7 +4116,7 @@ namespace Oxygen
         {
 
             window = gtk_widget_get_parent_window( widget );
-            verticalMaskOffset=Oxygen::Menu_VerticalOffset;
+            verticalMaskOffset=Carbon::Menu_VerticalOffset;
 
         } else if(
             Gtk::gtk_is_tooltip( widget ) ||
@@ -4127,7 +4127,7 @@ namespace Oxygen
 
         } else {
 
-            std::cerr << "FIXME: Oxygen::WidgetSizeData: unknown window type: \""<< Gtk::gtk_widget_path( widget )<<"\"\n";
+            std::cerr << "FIXME: Carbon::WidgetSizeData: unknown window type: \""<< Gtk::gtk_widget_path( widget )<<"\"\n";
             return;
 
         }

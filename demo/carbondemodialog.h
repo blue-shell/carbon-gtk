@@ -1,8 +1,8 @@
-#ifndef oxygendemodialog_h
-#define oxygendemodialog_h
+#ifndef carbondemodialog_h
+#define carbondemodialog_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -24,13 +24,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygensignalhandler.h"
-#include "oxygensliderdemowidget.h"
+#include "carbonsignalhandler.h"
+#include "carbonsliderdemowidget.h"
 
 #include <gtk/gtk.h>
 #include <map>
 
-namespace Oxygen
+namespace Carbon
 {
 
     // forward declaration

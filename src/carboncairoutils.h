@@ -1,7 +1,7 @@
-#ifndef oxygencairoutils_h
-#define oxygencairoutils_h
+#ifndef carboncairoutils_h
+#define carboncairoutils_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,16 +20,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencairopattern.h"
-#include "oxygenflags.h"
-#include "oxygengeometry.h"
-#include "oxygenrgba.h"
+#include "carboncairopattern.h"
+#include "carbonflags.h"
+#include "carbongeometry.h"
+#include "carbonrgba.h"
 
 #include <cairo.h>
 #include <gdk/gdk.h>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! draw arc with the parameters similar to those of QPainter::drawArc() (but using diameter instead of width&height). Also, angles are specified in degrees, not in 16ths of degrees
@@ -64,7 +64,7 @@ namespace Oxygen
 
     //! add color to pattern
     inline void cairo_pattern_add_color_stop( cairo_pattern_t* pattern, const ColorStop& colorStop )
-    { Oxygen::cairo_pattern_add_color_stop( pattern, colorStop._x, colorStop._color ); }
+    { Carbon::cairo_pattern_add_color_stop( pattern, colorStop._x, colorStop._color ); }
 
     //! get color stops
     ColorStop::List cairo_pattern_get_color_stops( cairo_pattern_t* );

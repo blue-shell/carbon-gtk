@@ -1,7 +1,7 @@
-#ifndef oxygentimer_h
-#define oxygentimer_h
+#ifndef carbontimer_h
+#define carbontimer_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -22,7 +22,7 @@
 
 #include <glib.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! handles gtk timeouts
     /*! make sure the timer is properly reset at destruction */
@@ -46,7 +46,7 @@ namespace Oxygen
             _data( 0L )
         {
             if( other.isRunning() )
-            { g_warning( "Oxygen::Timer::Timer - Copy constructor on running timer called." ); }
+            { g_warning( "Carbon::Timer::Timer - Copy constructor on running timer called." ); }
 
         }
 

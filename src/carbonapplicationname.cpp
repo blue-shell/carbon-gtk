@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -23,8 +23,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenapplicationname.h"
-#include "oxygengtkutils.h"
+#include "carbonapplicationname.h"
+#include "carbongtkutils.h"
 #include "config.h"
 
 #include <cstdlib>
@@ -33,7 +33,7 @@
 #include <sstream>
 #include <unistd.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //__________________________________________________________________________
@@ -46,7 +46,7 @@ namespace Oxygen
         // get application name from pid
         std::string pidAppName( fromPid( getpid() ) );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "ApplicationName::initialize -"
             << " from pid: " << pidAppName
             << " from gtk: " << gtkAppName
@@ -57,7 +57,7 @@ namespace Oxygen
         _name = Unknown;
 
         // Way to override appname detection
-        const char* envAppName(getenv("OXYGEN_APPLICATION_NAME_OVERRIDE"));
+        const char* envAppName(getenv("CARBON_APPLICATION_NAME_OVERRIDE"));
         if(envAppName)
         {
             gtkAppName=envAppName;
@@ -110,7 +110,7 @@ namespace Oxygen
         // For now, only LibreOffice passes its version, so for other apps version will remain NULL
         _version=getenv("LIBO_VERSION");
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "ApplicationName::initialize -"
             << " from pid: " << pidAppName
             << " from gtk: " << gtkAppName

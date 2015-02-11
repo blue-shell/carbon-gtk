@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * the treeview data code is largely inspired from the gtk redmond engine
@@ -20,22 +20,22 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentreeviewdata.h"
+#include "carbontreeviewdata.h"
 #include "../config.h"
-#include "../oxygengtkutils.h"
+#include "../carbongtkutils.h"
 
 #include <gtk/gtk.h>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void TreeViewData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         // store target
@@ -76,8 +76,8 @@ namespace Oxygen
     void TreeViewData::disconnect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::disconnect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::disconnect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
         #endif
 
         // reset target
@@ -105,8 +105,8 @@ namespace Oxygen
         if( !_cursor ) return;
         if( !GTK_IS_TREE_VIEW( _target ) ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::updateColumnsCursor - " << _target << " (" << G_OBJECT_TYPE_NAME( _target ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::updateColumnsCursor - " << _target << " (" << G_OBJECT_TYPE_NAME( _target ) << ")" << std::endl;
         #endif
 
         GList* children( gtk_tree_view_get_columns( GTK_TREE_VIEW( _target ) ) );
@@ -245,8 +245,8 @@ namespace Oxygen
 
         if( data._widget ) data.disconnect();
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::registerChild - " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::registerChild - " << widget << std::endl;
         #endif
 
         // make sure widget is not already in map
@@ -281,8 +281,8 @@ namespace Oxygen
     void TreeViewData::columnsChanged( GtkTreeView*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::columnsChanged" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::columnsChanged" << std::endl;
         #endif
 
         static_cast<TreeViewData*>(data)->updateColumnsCursor();
@@ -309,8 +309,8 @@ namespace Oxygen
 
         if( !_widget ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TreeViewData::ScrollBarData::disconnect - " << _widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TreeViewData::ScrollBarData::disconnect - " << _widget << std::endl;
         #endif
 
         _destroyId.disconnect();

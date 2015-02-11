@@ -1,7 +1,7 @@
-#ifndef oxygentabwidgetstatedata_h
-#define oxygentabwidgetstatedata_h
+#ifndef carbontabwidgetstatedata_h
+#define carbontabwidgetstatedata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentimeline.h"
-#include "../oxygenanimationdata.h"
+#include "carbontimeline.h"
+#include "../carbonanimationdata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! track arrow state changes events,
     /*! used to deal with spinbox and Notebook arrows */

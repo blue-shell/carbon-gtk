@@ -1,7 +1,7 @@
-#ifndef oxygengtktypenames_h
-#define oxygengtktypenames_h
+#ifndef carbongtktypenames_h
+#define carbongtktypenames_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -29,7 +29,7 @@
 #include <string>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     namespace Gtk

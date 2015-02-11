@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -22,8 +22,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygengtkutils.h"
-#include "oxygengtktypenames.h"
+#include "carbongtkutils.h"
+#include "carbongtktypenames.h"
 #include "config.h"
 
 #include <cmath>
@@ -32,7 +32,7 @@
 #include <iostream>
 #include <set>
 
-namespace Oxygen
+namespace Carbon
 {
     GQuark Gtk::Quarks::_rcStyle = 0L;
 
@@ -79,7 +79,7 @@ namespace Oxygen
     {
         if( !widget ) return false;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "Gtk::gtk_widget_is_applet(): " << Gtk::gtk_widget_path(widget) << std::endl;
         #endif
 
@@ -125,7 +125,7 @@ namespace Oxygen
     {
 
         if( !widget ) return;
-        std::cerr << "Oxygen::Gtk::gtk_widget_print_tree - widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        std::cerr << "Carbon::Gtk::gtk_widget_print_tree - widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         while( ( widget = gtk_widget_get_parent( widget ) ) )
         { std::cerr << "    parent: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl; }
 
@@ -156,7 +156,7 @@ namespace Oxygen
 
         GdkWindowTypeHint hint = gdk_window_get_type_hint( window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "Gtk::gdk_window_is_base - " << TypeNames::windowTypeHint( hint ) << std::endl;
         #endif
 
@@ -1009,8 +1009,8 @@ namespace Oxygen
         // get children of dialog's action area
         GList* children( gtk_container_get_children( GTK_CONTAINER( gtk_dialog_get_action_area( dialog ) ) ) );
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Gtk::gtk_dialog_find_button - buttons: ";
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Gtk::gtk_dialog_find_button - buttons: ";
         #endif
 
         for( GList *child = g_list_first( children ); child; child = g_list_next( child ) )
@@ -1022,14 +1022,14 @@ namespace Oxygen
 
             const gint id( gtk_dialog_get_response_for_widget(dialog, childWidget ) );
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr << Gtk::TypeNames::response( (GtkResponseType) id ) << ", ";
             #endif
             if( id == response_id ) return childWidget;
 
         }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << std::endl;
         #endif
 

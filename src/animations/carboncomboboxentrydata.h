@@ -1,7 +1,7 @@
-#ifndef oxygencomboboxentrydata_h
-#define oxygencomboboxentrydata_h
+#ifndef carboncomboboxentrydata_h
+#define carboncomboboxentrydata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenhoverdata.h"
-#include "oxygensignal.h"
+#include "carbonhoverdata.h"
+#include "carbonsignal.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     // handles focus and hover for editable comboboxes

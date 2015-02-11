@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * the tabwidget data code is largely inspired from the gtk redmond engine
@@ -20,23 +20,23 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentabwidgetdata.h"
-#include "../oxygengtkutils.h"
+#include "carbontabwidgetdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void TabWidgetData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetData::connect - " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetData::connect - " << widget << std::endl;
         #endif
 
         _target = widget;
@@ -52,8 +52,8 @@ namespace Oxygen
     void TabWidgetData::disconnect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetData::disconnect - " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetData::disconnect - " << widget << std::endl;
         #endif
 
         _target = 0L;
@@ -121,8 +121,8 @@ namespace Oxygen
             Gtk::gtk_notebook_get_tabbar_rect( GTK_NOTEBOOK( _target ), &updateRect );
             Gtk::gtk_widget_queue_draw( _target, &updateRect );
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::TabWidgetData::setDirty - update: " << updateRect << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::TabWidgetData::setDirty - update: " << updateRect << std::endl;
             #endif
 
         }
@@ -178,8 +178,8 @@ namespace Oxygen
     //________________________________________________________________________________
     void TabWidgetData::pageAddedEvent( GtkNotebook* parent, GtkWidget* child, guint, gpointer data)
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetData::pageAddedEvent - " << child << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetData::pageAddedEvent - " << child << std::endl;
         #endif
         static_cast<TabWidgetData*>(data)->updateRegisteredChildren( GTK_WIDGET( parent ) );
     }
@@ -216,8 +216,8 @@ namespace Oxygen
         if( _childrenData.find( widget ) == _childrenData.end() )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::TabWidgetData::registerChild - " << widget << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::TabWidgetData::registerChild - " << widget << std::endl;
             #endif
 
             // allocate new ChildData
@@ -257,8 +257,8 @@ namespace Oxygen
         ChildDataMap::iterator iter( _childrenData.find( widget ) );
         if( iter == _childrenData.end() ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetData::unregisterChild - " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetData::unregisterChild - " << widget << std::endl;
         #endif
 
         iter->second.disconnect();

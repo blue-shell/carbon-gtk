@@ -1,8 +1,8 @@
-#ifndef oxygentaboptions_h
-#define oxygentaboptions_h
+#ifndef carbontaboptions_h
+#define carbontaboptions_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,11 +20,11 @@
 * Software Foundation, Inc., 51  Franklin St, Fifth Floor, Boston,
 * MA 02110-1301, USA.
 */
-#include "oxygenflags.h"
+#include "carbonflags.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! internal option flags to pass arguments around
@@ -71,6 +71,6 @@ namespace Oxygen
 
 }
 
-OX_DECLARE_OPERATORS_FOR_FLAGS( Oxygen::TabOptions )
+OX_DECLARE_OPERATORS_FOR_FLAGS( Carbon::TabOptions )
 
 #endif

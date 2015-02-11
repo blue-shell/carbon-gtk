@@ -1,7 +1,7 @@
-#ifndef oxygen_h
-#define oxygen_h
+#ifndef carbon_h
+#define carbon_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define OXYGEN_LOG_DOMAIN "oxygen-engine"
+#define CARBON_LOG_DOMAIN "carbon-engine"
 
 G_END_DECLS
 

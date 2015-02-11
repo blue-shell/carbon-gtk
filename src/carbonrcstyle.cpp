@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the 0L Theme Engine for Gtk+.
@@ -21,13 +21,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenrcstyle.h"
-#include "oxygenstyle.h"
-#include "oxygenstylewrapper.h"
+#include "carbonrcstyle.h"
+#include "carbonstyle.h"
+#include "carbonstylewrapper.h"
 
 #include "config.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //______________________________________________________________________
@@ -50,7 +50,7 @@ namespace Oxygen
         guint token;
 
         if( !scope_id )
-        { scope_id = g_quark_from_string( "oxygen_engine" ); }
+        { scope_id = g_quark_from_string( "carbon_engine" ); }
 
         old_scope = g_scanner_set_scope( scanner, scope_id );
 
@@ -75,7 +75,7 @@ namespace Oxygen
     }
 
     //______________________________________________________________________
-    void RCStyle::classInit( OxygenRcStyleClass *klass )
+    void RCStyle::classInit( CarbonRcStyleClass *klass )
     {
 
         GtkRcStyleClass *rcStyleClass( GTK_RC_STYLE_CLASS( klass ) );
@@ -91,26 +91,26 @@ namespace Oxygen
     void RCStyle::registerType( GTypeModule *module )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::RCStyle::registerType" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::RCStyle::registerType" << std::endl;
         #endif
 
         const GTypeInfo info =
         {
-            (guint16)sizeof(OxygenRcStyleClass ),
+            (guint16)sizeof(CarbonRcStyleClass ),
             (GBaseInitFunc) NULL,
             (GBaseFinalizeFunc) NULL,
             (GClassInitFunc) classInit,
             (GClassFinalizeFunc) NULL,
             NULL,
-            (guint16)sizeof( OxygenRcStyle ),
+            (guint16)sizeof( CarbonRcStyle ),
             0,
             (GInstanceInitFunc) NULL,
             NULL
         };
 
         _typeInfo = info;
-        _type = g_type_module_register_type( module, GTK_TYPE_RC_STYLE, "OxygenRcStyle", &_typeInfo, GTypeFlags(0 ) );
+        _type = g_type_module_register_type( module, GTK_TYPE_RC_STYLE, "CarbonRcStyle", &_typeInfo, GTypeFlags(0 ) );
 
     }
 

@@ -1,7 +1,7 @@
-#ifndef oxygenhook_h
-#define oxygenhook_h
+#ifndef carbonhook_h
+#define carbonhook_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -24,7 +24,7 @@
 #include <gtk/gtk.h>
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
     //! handles gtk signal hooks
     class Hook

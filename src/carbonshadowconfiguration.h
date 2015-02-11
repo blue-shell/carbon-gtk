@@ -1,7 +1,7 @@
-#ifndef oxygenshadowconfiguration_h
-#define oxygenshadowconfiguration_h
+#ifndef carbonshadowconfiguration_h
+#define carbonshadowconfiguration_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -25,10 +25,10 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenoptionmap.h"
-#include "oxygenpalette.h"
+#include "carbonoptionmap.h"
+#include "carbonpalette.h"
 
-namespace Oxygen
+namespace Carbon
 {
     //! shadow configuration (not including colors since they reside in _palette)
     class ShadowConfiguration

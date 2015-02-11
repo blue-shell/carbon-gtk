@@ -1,7 +1,7 @@
-#ifndef oxygengtkcellinfo_h
-#define oxygengtkcellinfo_h
+#ifndef carbongtkcellinfo_h
+#define carbongtkcellinfo_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,14 +20,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenflags.h"
+#include "carbonflags.h"
 
 #include <vector>
 #include <iostream>
 #include <gdk/gdk.h>
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     namespace Gtk
     {

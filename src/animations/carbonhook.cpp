@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,16 +19,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenhook.h"
+#include "carbonhook.h"
 #include "../config.h"
 
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
-    #if OXYGEN_DEBUG
+    #if CARBON_DEBUG
     static int counter( 0 );
     #endif
 
@@ -45,8 +45,8 @@ namespace Oxygen
         if( !g_type_class_peek( typeId ) )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::Hook::connect - typeId " << g_type_name(typeId) << " not yet installed" << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::Hook::connect - typeId " << g_type_name(typeId) << " not yet installed" << std::endl;
             #endif
 
             g_type_class_ref( typeId );
@@ -58,8 +58,8 @@ namespace Oxygen
         if( !_signalId )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::Hook::connect - signal " << signal << " not installed." << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::Hook::connect - signal " << signal << " not installed." << std::endl;
             #endif
 
             return false;
@@ -73,9 +73,9 @@ namespace Oxygen
             hookFunction,
             data, 0L);
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         ++counter;
-        std::cerr << "Oxygen::Hook::connect - hook: " << _hookId << " counter: " << counter << std::endl;
+        std::cerr << "Carbon::Hook::connect - hook: " << _hookId << " counter: " << counter << std::endl;
         #endif
 
         return true;
@@ -93,9 +93,9 @@ namespace Oxygen
         if( _signalId > 0 && _hookId > 0 )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             --counter;
-            std::cerr << "Oxygen::Hook::disconnect - hook: " << _hookId << " counter: " << counter << std::endl;
+            std::cerr << "Carbon::Hook::disconnect - hook: " << _hookId << " counter: " << counter << std::endl;
             #endif
 
             g_signal_remove_emission_hook( _signalId, _hookId );

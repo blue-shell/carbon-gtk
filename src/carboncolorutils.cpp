@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -23,16 +23,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencolorutils.h"
-#include "oxygencache.h"
-#include "oxygenrgba.h"
+#include "carboncolorutils.h"
+#include "carboncache.h"
+#include "carbonrgba.h"
 
 #include <algorithm>
 #include <math.h>
 #include <map>
 #include <sstream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     namespace ColorUtils

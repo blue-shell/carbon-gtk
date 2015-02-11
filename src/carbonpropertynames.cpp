@@ -1,6 +1,6 @@
 /*
-* oxygenpropertynames.cpp
-* hard-coded property names to disable some of oxygen features
+* carbonpropertynames.cpp
+* hard-coded property names to disable some of carbon features
 * -------------------
 *
 * Copyright (c) 2012 Hugo Pereira Da Costa <hugo.pereira@free.fr>
@@ -23,9 +23,9 @@
 * Software Foundation, Inc., 51  Franklin St, Fifth Floor, Boston,
 * MA 02110-1301, USA.
 */
-#include "oxygenpropertynames.h"
+#include "carbonpropertynames.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     const char* const PropertyNames::noAnimations = "_kde_no_animations";

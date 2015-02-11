@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,14 +18,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenflatwidgetengine.h"
-#include "../oxygengtktypenames.h"
-#include "../oxygengtkutils.h"
+#include "carbonflatwidgetengine.h"
+#include "../carbongtktypenames.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
     //_________________________________________________________
     bool FlatWidgetEngine::registerFlatWidget( GtkWidget* widget )

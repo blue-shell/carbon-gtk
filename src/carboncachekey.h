@@ -1,8 +1,8 @@
-#ifndef oxygencachekey_h
-#define oxygencachekey_h
+#ifndef carboncachekey_h
+#define carboncachekey_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,10 +21,10 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenrgba.h"
-#include "oxygenwindecooptions.h"
+#include "carbonrgba.h"
+#include "carbonwindecooptions.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! key for separators
@@ -694,7 +694,7 @@ namespace Oxygen
         //! explicit constructor
         explicit WindowShadowKey( void ):
             active(false),
-            useOxygenShadows(true),
+            useCarbonShadows(true),
             isShade(false),
             hasTitleOutline(false),
             hasTopBorder( true ),
@@ -706,7 +706,7 @@ namespace Oxygen
         {
             return
                 ( active == other.active ) &&
-                ( useOxygenShadows == other.useOxygenShadows ) &&
+                ( useCarbonShadows == other.useCarbonShadows ) &&
                 ( isShade == other.isShade ) &&
                 ( hasTitleOutline == other.hasTitleOutline ) &&
                 ( hasTopBorder == other.hasTopBorder ) &&
@@ -718,7 +718,7 @@ namespace Oxygen
         bool operator < (const WindowShadowKey& other) const
         {
             if( active != other.active ) return active < other.active;
-            else if( useOxygenShadows != other.useOxygenShadows ) return useOxygenShadows < other.useOxygenShadows;
+            else if( useCarbonShadows != other.useCarbonShadows ) return useCarbonShadows < other.useCarbonShadows;
             else if( isShade != other.isShade ) return isShade < other.isShade;
             else if( hasTitleOutline != other.hasTitleOutline ) return hasTitleOutline < other.hasTitleOutline;
             else if( hasTopBorder != other.hasTopBorder ) return hasTopBorder < other.hasTopBorder;
@@ -726,7 +726,7 @@ namespace Oxygen
         }
 
         bool active;
-        bool useOxygenShadows;
+        bool useCarbonShadows;
         bool isShade;
         bool hasTitleOutline;
         bool hasTopBorder;

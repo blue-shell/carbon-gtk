@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * the hover data code is largely inspired from the gtk redmond engine
@@ -20,22 +20,22 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenhoverdata.h"
-#include "../oxygengtkutils.h"
+#include "carbonhoverdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void HoverData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::HoverData::connect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::HoverData::connect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
         #endif
 
         const bool enabled( gtk_widget_get_state( widget ) != GTK_STATE_INSENSITIVE );
@@ -65,8 +65,8 @@ namespace Oxygen
     //________________________________________________________________________________
     void HoverData::disconnect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::HoverData::disconnect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::HoverData::disconnect - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"null") << ")" << std::endl;
         #endif
 
         _enterId.disconnect();
@@ -76,7 +76,7 @@ namespace Oxygen
     //________________________________________________________________________________
     gboolean HoverData::enterNotifyEvent(GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "HoverData::enterNotifyEvent - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
@@ -87,8 +87,8 @@ namespace Oxygen
     //________________________________________________________________________________
     gboolean HoverData::leaveNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::HoverData::leaveNotifyEvent - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::HoverData::leaveNotifyEvent - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         static_cast<HoverData*>( data )->setHovered( widget, false );

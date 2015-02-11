@@ -1,7 +1,7 @@
-#ifndef oxygenqtsettings_h
-#define oxygenqtsettings_h
+#ifndef carbonqtsettings_h
+#define carbonqtsettings_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,17 +20,17 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenanimationmodes.h"
-#include "oxygenapplicationname.h"
-#include "oxygengtkicons.h"
-#include "oxygengtkrc.h"
-#include "oxygenoption.h"
-#include "oxygenoptionmap.h"
-#include "oxygenpalette.h"
-#include "oxygenshadowconfiguration.h"
-#include "oxygensignal.h"
-#include "oxygenpathlist.h"
-#include "oxygenfontinfo.h"
+#include "carbonanimationmodes.h"
+#include "carbonapplicationname.h"
+#include "carbongtkicons.h"
+#include "carbongtkrc.h"
+#include "carbonoption.h"
+#include "carbonoptionmap.h"
+#include "carbonpalette.h"
+#include "carbonshadowconfiguration.h"
+#include "carbonsignal.h"
+#include "carbonpathlist.h"
+#include "carbonfontinfo.h"
 #include "pango/pango.h"
 
 #include <gio/gio.h>
@@ -42,7 +42,7 @@
 #include <string>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     class QtSettings
@@ -64,10 +64,10 @@ namespace Oxygen
             Icons = 1<<1,
             Fonts = 1<<2,
             KdeGlobals = 1<<3,
-            Oxygen = 1<<4,
+            Carbon = 1<<4,
             Colors = 1<<5,
             Extra = 1<<7,
-            All = AppName|Icons|Fonts|KdeGlobals|Oxygen|Colors|Extra,
+            All = AppName|Icons|Fonts|KdeGlobals|Carbon|Colors|Extra,
             Forced = 1<<6
         };
 
@@ -90,7 +90,7 @@ namespace Oxygen
         const ApplicationName& applicationName( void ) const
         { return _applicationName; }
 
-        //!@name oxygen style options
+        //!@name carbon style options
         //@{
 
         //! use effect to render active (mouse-over) icons
@@ -379,9 +379,9 @@ namespace Oxygen
         /*! returns true if changed */
         bool loadKdeGlobals( void );
 
-        //! oxygen settings
+        //! carbon settings
         /*! returns true if changed */
-        bool loadOxygen( void );
+        bool loadCarbon( void );
 
         //! kde configuration path
         PathList kdeConfigPathList( void ) const;
@@ -424,8 +424,8 @@ namespace Oxygen
         //! extra kde globals options
         void loadKdeGlobalsOptions( void );
 
-        //! oxygen options (from oxygenrc)
-        void loadOxygenOptions( void );
+        //! carbon options (from carbonrc)
+        void loadCarbonOptions( void );
 
         //! extra metrics options
         void loadExtraOptions( void );
@@ -455,8 +455,8 @@ namespace Oxygen
         //! kde global options
         OptionMap _kdeGlobals;
 
-        //! oxygen options
-        OptionMap _oxygen;
+        //! carbon options
+        OptionMap _carbon;
 
         //! user config directory
         std::string _userConfigDir;
@@ -489,7 +489,7 @@ namespace Oxygen
         //! palette
         Palette _palette;
 
-        //!@name kde/oxygen style options
+        //!@name kde/carbon style options
         //@{
 
         //! if true, inactive selection has different color from active
@@ -618,7 +618,7 @@ namespace Oxygen
         //! inactive shadows
         ShadowConfiguration _inactiveShadowConfiguration;
 
-        //! oxygen-transparent background opacity
+        //! carbon-transparent background opacity
         int _backgroundOpacity;
 
         //! windeco font

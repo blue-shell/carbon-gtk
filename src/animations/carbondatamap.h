@@ -1,7 +1,7 @@
-#ifndef oxygendatamap_h
-#define oxygendatamap_h
+#ifndef carbondatamap_h
+#define carbondatamap_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -24,7 +24,7 @@
 #include <map>
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! generic class to map data to widgets

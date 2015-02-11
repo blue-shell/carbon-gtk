@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,23 +18,23 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencomboboxentrydata.h"
-#include "../oxygengtkutils.h"
+#include "carboncomboboxentrydata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 #include <iostream>
 #include <cassert>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void ComboBoxEntryData::disconnect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxEntryData::connect - widget: " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxEntryData::connect - widget: " << widget << std::endl;
         #endif
 
         _list = 0L;
@@ -63,8 +63,8 @@ namespace Oxygen
         if( _entry._widget == widget ) return;
         assert( !_entry._widget );
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxEntryData::setEntry - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxEntryData::setEntry - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _entry._destroyId.connect( G_OBJECT(widget), "destroy", G_CALLBACK( childDestroyNotifyEvent ), this );
@@ -104,8 +104,8 @@ namespace Oxygen
     void ComboBoxEntryData::unregisterChild( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxEntryData::unregisterChild - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxEntryData::unregisterChild - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         if( widget == _button._widget ) _button.disconnect();
@@ -118,8 +118,8 @@ namespace Oxygen
     void ComboBoxEntryData::Data::disconnect( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxEntryData::Data::disconnect - " << _widget << " (" << (_widget ? G_OBJECT_TYPE_NAME( _widget ):"null") << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxEntryData::Data::disconnect - " << _widget << " (" << (_widget ? G_OBJECT_TYPE_NAME( _widget ):"null") << ")" << std::endl;
         #endif
 
         if( !_widget ) return;

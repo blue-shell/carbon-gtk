@@ -1,7 +1,7 @@
-#ifndef oxygenscrolledwindowengine_h
-#define oxygenscrolledwindowengine_h
+#ifndef carbonscrolledwindowengine_h
+#define carbonscrolledwindowengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,13 +21,13 @@
 */
 
 
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygenscrolledwindowdata.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbonscrolledwindowdata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

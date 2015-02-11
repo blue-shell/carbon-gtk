@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -21,9 +21,9 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygengtktypenames.h"
+#include "carbongtktypenames.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_______________________________________________

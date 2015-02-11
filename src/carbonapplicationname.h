@@ -1,7 +1,7 @@
-#ifndef oxygenapplicationname_h
-#define oxygenapplicationname_h
+#ifndef carbonapplicationname_h
+#define carbonapplicationname_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -29,7 +29,7 @@
 #include <iostream>
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! application name enumeration

@@ -1,4 +1,4 @@
-This is the oxygen-gtk TODO list, maintained and updated by the devs.
+This is the carbon-gtk TODO list, maintained and updated by the devs.
 You can add anything you can think of here. Possibly specifying the branch, a possible release target, and a priority.
 You can also add your name on which of the item you are either already working on, or interested in working on.
 
@@ -9,7 +9,7 @@ Try find a way to avoid flicker on combobox resize (not sure whether this actual
 - add hooks at widget realization for registration to the relevant engines, rather than having it scattered in stylewrapper
 TRIED, but it actually does not unclutter the code much, and creates other issues. So post-poned.
 
-- better support for using oxygen-gtk in a non-kde environment.
+- better support for using carbon-gtk in a non-kde environment.
 
 GTK3 branch:
 
@@ -48,4 +48,4 @@ Inner shadows:
 Implement separate check if a particular GtkScrolledWindow has to be registered to ScrolledWindowEngine to allow for checking before registration (in innerShadowHook as well as in draw_shadow())
 Also use composited child hack to round combobox list (and remove old XShape hack for this)
 
-Apply XShape to GtkEntry and GtkComboboxEntry to make it look better on non-oxygen background (e.g. in GtkTextView)
+Apply XShape to GtkEntry and GtkComboboxEntry to make it look better on non-carbon background (e.g. in GtkTextView)

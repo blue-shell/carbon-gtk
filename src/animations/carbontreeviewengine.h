@@ -1,7 +1,7 @@
-#ifndef oxygentreeviewengine_h
-#define oxygentreeviewengine_h
+#ifndef carbontreeviewengine_h
+#define carbontreeviewengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -21,13 +21,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygentreeviewdata.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbontreeviewdata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

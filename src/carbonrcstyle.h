@@ -1,7 +1,7 @@
-#ifndef oxygenrcstyle_h
-#define oxygenrcstyle_h
+#ifndef carbonrcstyle_h
+#define carbonrcstyle_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -25,15 +25,15 @@
 
 #include <gtk/gtk.h>
 
-// Oxygen RcStyle struct
-struct OxygenRcStyle
+// Carbon RcStyle struct
+struct CarbonRcStyle
 { GtkRcStyle parent; };
 
-// oxygen RcStyleClass struct
-struct OxygenRcStyleClass
+// carbon RcStyleClass struct
+struct CarbonRcStyleClass
 { GtkRcStyleClass parent; };
 
-namespace Oxygen
+namespace Carbon
 {
     class RCStyle
     {
@@ -49,7 +49,7 @@ namespace Oxygen
         protected:
 
         //! class initialization method
-        static void classInit( OxygenRcStyleClass* );
+        static void classInit( CarbonRcStyleClass* );
 
         //! style creation
         static GtkStyle* createStyle( GtkRcStyle* );
@@ -75,4 +75,4 @@ namespace Oxygen
 }
 
 
-#endif /* OXYGEN_RC_STYLE_H */
+#endif /* CARBON_RC_STYLE_H */

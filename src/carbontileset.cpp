@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This library is free software; you can redistribute it and/or
@@ -18,15 +18,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentileset.h"
-#include "oxygencairocontext.h"
-#include "oxygencairoutils.h"
-#include "oxygencolorutils.h"
+#include "carbontileset.h"
+#include "carboncairocontext.h"
+#include "carboncairoutils.h"
+#include "carboncolorutils.h"
 
 #include <algorithm>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //______________________________________________________________
@@ -70,7 +70,7 @@ namespace Oxygen
         initSurface( _surfaces, surface, _w3, _h3, _w1+w2, _h1+h2, _w3, _h3 );
 
         if(!isValid())
-            std::cerr << "oxygen-gtk: BUG: created tileset looks invalid, expect resource leaks ("<<__FILE__<<":"<<__LINE__<<")\n";
+            std::cerr << "carbon-gtk: BUG: created tileset looks invalid, expect resource leaks ("<<__FILE__<<":"<<__LINE__<<")\n";
 
     }
 

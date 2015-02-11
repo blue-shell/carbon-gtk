@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -27,22 +27,22 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenmenubarstatedata.h"
-#include "../oxygengtkutils.h"
+#include "carbonmenubarstatedata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void MenuBarStateData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::MenuBarStateData::connect - "
+            << "Carbon::MenuBarStateData::connect - "
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -68,9 +68,9 @@ namespace Oxygen
     void MenuBarStateData::disconnect( GtkWidget* )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::MenuBarStateData::disconnect - "
+            << "Carbon::MenuBarStateData::disconnect - "
             << " " << _target << " (" << (_target ? G_OBJECT_TYPE_NAME( _target ) : "0x0") << ")"
             << std::endl;
         #endif
@@ -102,9 +102,9 @@ namespace Oxygen
         if( widget && _children.find( widget ) == _children.end() )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::MenuBarStateData::registerChild -"
+                << "Carbon::MenuBarStateData::registerChild -"
                 << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << std::endl;
             #endif
@@ -120,9 +120,9 @@ namespace Oxygen
     void MenuBarStateData::unregisterChild( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::MenuBarStateData::unregisterChild -"
+            << "Carbon::MenuBarStateData::unregisterChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -317,9 +317,9 @@ namespace Oxygen
     //____________________________________________________________________________________________
     gboolean MenuBarStateData::childDestroyNotifyEvent( GtkWidget* widget, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::MenuBarStateData::childDestroyNotifyEvent -"
+            << "Carbon::MenuBarStateData::childDestroyNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif

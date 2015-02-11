@@ -1,8 +1,8 @@
-#ifndef oxygentheme_h
-#define oxygentheme_h
+#ifndef carbontheme_h
+#define carbontheme_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *

@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,14 +18,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendialogengine.h"
-#include "../oxygengtktypenames.h"
-#include "../oxygengtkutils.h"
+#include "carbondialogengine.h"
+#include "../carbongtktypenames.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
     //_________________________________________________________
     bool DialogEngine::registerWidget( GtkWidget* widget )
@@ -49,7 +49,7 @@ namespace Oxygen
 
         const int numOfResponseIDs=sizeof(responses)/sizeof(responses[0]);
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr<<"DialogEngine::registerWidget - Initial response table: ";
         for(int i=0; i<numOfResponseIDs; i++)
         { std::cerr << Gtk::TypeNames::response( responses[i] ) << ", "; }
@@ -62,7 +62,7 @@ namespace Oxygen
             GtkWidget* button( Gtk::gtk_dialog_find_button(dialog,responses[i]) );
             if( !button ) continue;
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr << "responseID found: " << Gtk::TypeNames::response( responses[i] ) << "; button \"" << gtk_button_get_label(GTK_BUTTON(button)) << "\""  << std::endl;
             #endif
             // i is always >= numOfResponsesFound, so this will copy response id nearer to start, but never to end
@@ -71,7 +71,7 @@ namespace Oxygen
 
         }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "DialogEngine::registerWidget - numOfResponsesFound: " << numOfResponsesFound << std::endl;
         std::cerr << "List of responses found: { ";
 

@@ -1,8 +1,8 @@
-#ifndef oxygendefines_h
-#define oxygendefines_h
+#ifndef carbondefines_h
+#define carbondefines_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -22,7 +22,7 @@
 * MA 02110-1301, USA.
 */
 
-#define OXYGEN_VERSION_TYPE_NAME "OxygenVersionContainer"
-#define OXYGEN_VERSION_QUARK_NAME "VersionString"
+#define CARBON_VERSION_TYPE_NAME "CarbonVersionContainer"
+#define CARBON_VERSION_QUARK_NAME "VersionString"
 
 #endif

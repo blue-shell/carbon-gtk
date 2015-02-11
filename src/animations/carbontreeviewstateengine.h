@@ -1,7 +1,7 @@
-#ifndef oxygentreeviewstateengine_h
-#define oxygentreeviewstateengine_h
+#ifndef carbontreeviewstateengine_h
+#define carbontreeviewstateengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,17 +20,17 @@
 * MA 02110-1301, USA.
 */
 
-#include "../oxygenanimationdata.h"
-#include "../oxygengtkcellinfo.h"
-#include "../oxygenstyleoptions.h"
-#include "oxygenanimationengine.h"
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygentreeviewstatedata.h"
+#include "../carbonanimationdata.h"
+#include "../carbongtkcellinfo.h"
+#include "../carbonstyleoptions.h"
+#include "carbonanimationengine.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbontreeviewstatedata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

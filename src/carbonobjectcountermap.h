@@ -2,7 +2,7 @@
 #define ObjectCounterMap_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2012 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -25,7 +25,7 @@
 #include <string>
 
 //! thread-safe Object counter storage map
-namespace Oxygen
+namespace Carbon
 {
     class ObjectCounterMap: public std::map<std::string, int>
     {

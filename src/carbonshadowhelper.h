@@ -1,7 +1,7 @@
-#ifndef oxygenshadowhelper_h
-#define oxygenshadowhelper_h
+#ifndef carbonshadowhelper_h
+#define carbonshadowhelper_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2011 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenapplicationname.h"
-#include "oxygencairosurface.h"
-#include "oxygenhook.h"
-#include "oxygensignal.h"
-#include "oxygentileset.h"
-#include "oxygenwindowshadow.h"
+#include "carbonapplicationname.h"
+#include "carboncairosurface.h"
+#include "carbonhook.h"
+#include "carbonsignal.h"
+#include "carbontileset.h"
+#include "carbonwindowshadow.h"
 
 #include <vector>
 #include <map>
@@ -35,7 +35,7 @@
 #include <X11/Xlib.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! handles X11 property passed to menu windows for window manager to draw proper shadows

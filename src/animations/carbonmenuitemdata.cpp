@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,13 +19,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenmenuitemdata.h"
-#include "../oxygengtkutils.h"
+#include "carbonmenuitemdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
@@ -70,9 +70,9 @@ namespace Oxygen
         if( style->depth == gdk_drawable_get_depth( window ) )
         { return; }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::MenuItemData::attachStyle -"
+            << "Carbon::MenuItemData::attachStyle -"
             << " widget: " << widget << " (" <<G_OBJECT_TYPE_NAME( widget ) << ")"
             << " style depth: " << style->depth
             << " window depth: " << gdk_drawable_get_depth( window )

@@ -1,7 +1,7 @@
-#ifndef oxygengtkrc_h
-#define oxygengtkrc_h
+#ifndef carbongtkrc_h
+#define carbongtkrc_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -26,7 +26,7 @@
 #include <string>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
     namespace Gtk
     {
@@ -128,7 +128,7 @@ namespace Oxygen
             {
                 addSection( _headerSectionName );
                 addSection( _rootSectionName );
-                addSection( _defaultSectionName, "oxygen-default" );
+                addSection( _defaultSectionName, "carbon-default" );
                 addToRootSection( std::string("class \"*\" style \"")+_defaultSectionName+"\"" );
             }
 

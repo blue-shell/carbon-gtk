@@ -1,7 +1,7 @@
-#ifndef oxygenflags_h
-#define oxygenflags_h
+#ifndef carbonflags_h
+#define carbonflags_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * largely inspired from Flags
@@ -23,7 +23,7 @@
 * MA 02110-1301, USA.
 */
 
-namespace Oxygen
+namespace Carbon
 {
 
     template<typename Enum>
@@ -192,14 +192,14 @@ namespace Oxygen
 typedef Flags<Enum> F;
 
 #define OX_DECLARE_INCOMPATIBLE_FLAGS(F) \
-inline Oxygen::IncompatibleFlag operator|(F::enum_type f1, int f2) \
-{ return Oxygen::IncompatibleFlag(int(f1) | f2); }
+inline Carbon::IncompatibleFlag operator|(F::enum_type f1, int f2) \
+{ return Carbon::IncompatibleFlag(int(f1) | f2); }
 
 
 #define OX_DECLARE_OPERATORS_FOR_FLAGS(F) \
-inline Oxygen::Flags<F::enum_type> operator|(F::enum_type f1, F::enum_type f2) \
-{ return Oxygen::Flags<F::enum_type>(f1) | f2; } \
-inline Oxygen::Flags<F::enum_type> operator|(F::enum_type f1, Oxygen::Flags<F::enum_type> f2) \
+inline Carbon::Flags<F::enum_type> operator|(F::enum_type f1, F::enum_type f2) \
+{ return Carbon::Flags<F::enum_type>(f1) | f2; } \
+inline Carbon::Flags<F::enum_type> operator|(F::enum_type f1, Carbon::Flags<F::enum_type> f2) \
 { return f2 | f1; } \
 OX_DECLARE_INCOMPATIBLE_FLAGS(F)
 

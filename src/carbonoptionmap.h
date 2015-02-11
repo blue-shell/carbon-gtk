@@ -1,7 +1,7 @@
-#ifndef oxygenoptionmap_h
-#define oxygenoptionmap_h
+#ifndef carbonoptionmap_h
+#define carbonoptionmap_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -25,13 +25,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenoption.h"
+#include "carbonoption.h"
 
 #include <map>
 #include <set>
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
     // all options from kde globals
     class OptionMap: public std::map<std::string, Option::Set>

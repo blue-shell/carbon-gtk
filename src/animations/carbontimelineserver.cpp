@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,14 +18,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentimelineserver.h"
-#include "oxygentimeline.h"
+#include "carbontimelineserver.h"
+#include "carbontimeline.h"
 #include "../config.h"
 
 #include <gdk/gdk.h>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! time interval between two updates (use 20 msec for now)
@@ -46,7 +46,7 @@ namespace Oxygen
     TimeLineServer::TimeLineServer( void ):
         _timerId( 0 )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "TimeLineServer::TimeLineServer." << std::endl;
         #endif
     }
@@ -55,7 +55,7 @@ namespace Oxygen
     TimeLineServer::~TimeLineServer( void )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr << "TimeLineServer::~TimeLineServer." << std::endl;
         #endif
 

@@ -1,7 +1,7 @@
-#ifndef oxygenpalette_h
-#define oxygenpalette_h
+#ifndef carbonpalette_h
+#define carbonpalette_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenrgba.h"
+#include "carbonrgba.h"
 
 #include <vector>
 #include <map>
 
-namespace Oxygen
+namespace Carbon
 {
 
     // forward declarations

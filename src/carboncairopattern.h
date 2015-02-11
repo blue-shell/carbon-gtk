@@ -1,7 +1,7 @@
-#ifndef oxygencairopattern_h
-#define oxygencairopattern_h
+#ifndef carboncairopattern_h
+#define carboncairopattern_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -23,7 +23,7 @@
 #include <cairo.h>
 #include <cassert>
 
-namespace Oxygen
+namespace Carbon
 {
     namespace Cairo
     {

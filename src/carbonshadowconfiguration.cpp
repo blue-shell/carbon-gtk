@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -24,12 +24,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenshadowconfiguration.h"
+#include "carbonshadowconfiguration.h"
 #include "config.h"
 
 #include <cassert>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________________________
@@ -69,8 +69,8 @@ namespace Oxygen
     void ShadowConfiguration::initialize( const OptionMap& options )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowConfiguration::initialize - " << (_colorGroup == Palette::Active ? "Active": "Inactive" ) << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowConfiguration::initialize - " << (_colorGroup == Palette::Active ? "Active": "Inactive" ) << std::endl;
         #endif
 
         if( _colorGroup == Palette::Active)
@@ -102,7 +102,7 @@ namespace Oxygen
     //_________________________________________________________
     std::ostream& operator << (std::ostream& out, const ShadowConfiguration& configuration )
     {
-        out << "Oxygen::ShadowConfiguration - (" << (configuration._colorGroup == Palette::Active ? "Active": "Inactive" ) << ")" << std::endl;
+        out << "Carbon::ShadowConfiguration - (" << (configuration._colorGroup == Palette::Active ? "Active": "Inactive" ) << ")" << std::endl;
         out << "  enabled: " << (configuration._enabled ? "true":"false" ) << std::endl;
         out << "  size: " << configuration._shadowSize << std::endl;
         out << "  offset: " << configuration._verticalOffset << std::endl;

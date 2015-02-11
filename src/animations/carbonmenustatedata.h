@@ -1,7 +1,7 @@
-#ifndef oxygenmenustatedata_h
-#define oxygenmenustatedata_h
+#ifndef carbonmenustatedata_h
+#define carbonmenustatedata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,19 +20,19 @@
 * MA 02110-1301, USA.
 */
 
-#include "../oxygenanimationdata.h"
-#include "../oxygenanimationmodes.h"
-#include "../oxygengtkutils.h"
-#include "oxygenfollowmousedata.h"
-#include "oxygensignal.h"
-#include "oxygentimer.h"
-#include "oxygentimeline.h"
+#include "../carbonanimationdata.h"
+#include "../carbonanimationmodes.h"
+#include "../carbongtkutils.h"
+#include "carbonfollowmousedata.h"
+#include "carbonsignal.h"
+#include "carbontimer.h"
+#include "carbontimeline.h"
 
 #include <gtk/gtk.h>
 
 #include <map>
 
-namespace Oxygen
+namespace Carbon
 {
     //! handles menu items animations
     class MenuStateData: public FollowMouseData

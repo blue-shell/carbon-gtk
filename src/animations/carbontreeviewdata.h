@@ -1,7 +1,7 @@
-#ifndef oxygentreeviewdata_h
-#define oxygentreeviewdata_h
+#ifndef carbontreeviewdata_h
+#define carbontreeviewdata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -20,15 +20,15 @@
 * Software Foundation, Inc., 51  Franklin St, Fifth Floor, Boston,
 * MA 02110-1301, USA.
 */
-#include "../oxygengtkcellinfo.h"
-#include "../oxygengtkutils.h"
-#include "oxygenhoverdata.h"
-#include "oxygensignal.h"
+#include "../carbongtkcellinfo.h"
+#include "../carbongtkutils.h"
+#include "carbonhoverdata.h"
+#include "carbonsignal.h"
 
 #include <gtk/gtk.h>
 #include <algorithm>
 
-namespace Oxygen
+namespace Carbon
 {
     class TreeViewData: public HoverData
     {

@@ -1,8 +1,8 @@
-#ifndef oxygenanimationdata_h
-#define oxygenanimationdata_h
+#ifndef carbonanimationdata_h
+#define carbonanimationdata_h
 
 /*
-* oxygenanimationdata.h
+* carbonanimationdata.h
 * animation modes
 * -------------------
 *
@@ -27,9 +27,9 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenanimationmodes.h"
+#include "carbonanimationmodes.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! invalid opacity

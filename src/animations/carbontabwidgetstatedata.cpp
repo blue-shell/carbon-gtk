@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,13 +18,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentabwidgetstatedata.h"
-#include "../oxygengtkutils.h"
+#include "carbontabwidgetstatedata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
@@ -34,8 +34,8 @@ namespace Oxygen
     void TabWidgetStateData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _target = widget;
@@ -53,8 +53,8 @@ namespace Oxygen
     //_____________________________________________
     void TabWidgetStateData::disconnect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::TabWidgetStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::TabWidgetStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _current._timeLine.disconnect();
@@ -124,8 +124,8 @@ namespace Oxygen
             GdkRectangle rect( Gtk::gdk_rectangle() );
             Gtk::gtk_notebook_get_tabbar_rect( GTK_NOTEBOOK( _target ), &rect );
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::TabWidgetData::dirtyRect - " << rect << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::TabWidgetData::dirtyRect - " << rect << std::endl;
             #endif
 
             return rect;

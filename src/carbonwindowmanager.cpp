@@ -1,5 +1,5 @@
 /*
-* oxygenwindowmanager.cpp
+* carbonwindowmanager.cpp
 * pass some window mouse press/release/move event actions to window manager
 * -------------------
 *
@@ -25,12 +25,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwindowmanager.h"
-#include "oxygenpropertynames.h"
-#include "oxygenstyle.h"
+#include "carbonwindowmanager.h"
+#include "carbonpropertynames.h"
+#include "carbonstyle.h"
 #include "config.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
 
@@ -54,8 +54,8 @@ namespace Oxygen
         _globalY(-1),
         _time(0)
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::WindowManager" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::WindowManager" << std::endl;
         #endif
 
         // black list
@@ -67,8 +67,8 @@ namespace Oxygen
     WindowManager::~WindowManager( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::~WindowManager" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::~WindowManager" << std::endl;
         #endif
 
         _styleSetHook.disconnect();
@@ -114,9 +114,9 @@ namespace Oxygen
         if( widgetIsBlackListed( widget ) )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::WindowManager::registerWidget -"
+                << "Carbon::WindowManager::registerWidget -"
                 << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " is black listed"
                 << std::endl;
@@ -130,9 +130,9 @@ namespace Oxygen
         if( g_object_get_data( G_OBJECT( widget ), PropertyNames::noWindowGrab ) )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::WindowManager::registerWidget -"
+                << "Carbon::WindowManager::registerWidget -"
                 << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " requests no grab"
                 << std::endl;
@@ -146,9 +146,9 @@ namespace Oxygen
         if( GTK_IS_WINDOW( widget ) && !gtk_window_get_decorated( GTK_WINDOW( widget ) ) )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::WindowManager::registerWidget -"
+                << "Carbon::WindowManager::registerWidget -"
                 << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " is not decorated"
                 << std::endl;
@@ -174,9 +174,9 @@ namespace Oxygen
             ( gtk_widget_get_events ( widget ) &
             ( GDK_BUTTON_PRESS_MASK|GDK_BUTTON_RELEASE_MASK ) ) )
         {
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::WindowManager::registerWidget -"
+                << "Carbon::WindowManager::registerWidget -"
                 << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " has invalid event mask"
                 << std::endl;
@@ -189,9 +189,9 @@ namespace Oxygen
         if( widgetHasBlackListedParent( widget ) )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::WindowManager::registerWidget -"
+                << "Carbon::WindowManager::registerWidget -"
                 << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " has black listed parent"
                 << std::endl;
@@ -199,9 +199,9 @@ namespace Oxygen
             return false;
         }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::WindowManager::registerWidget -"
+            << "Carbon::WindowManager::registerWidget -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << " " << gtk_widget_get_name( widget )
             << std::endl;
@@ -228,8 +228,8 @@ namespace Oxygen
     {
         if( !_map.contains( widget ) ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::unregisterWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::unregisterWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _map.value( widget ).disconnect( widget );
@@ -247,8 +247,8 @@ namespace Oxygen
         // make sure that widget is not already connected
         if( _blackListWidgets.find( widget ) != _blackListWidgets.end() ) return false;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::registerBlackListWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::registerBlackListWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
       // connect destroy signal and insert in map
@@ -266,8 +266,8 @@ namespace Oxygen
         WidgetMap::iterator iter( _blackListWidgets.find( widget ) );
         if( iter == _blackListWidgets.end() ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::unregisterBlackListWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::unregisterBlackListWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         iter->second.disconnect();
@@ -316,8 +316,8 @@ namespace Oxygen
         {
 
             const bool accepted( static_cast<WindowManager*>(data)->canDrag( widget, event ) );
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::WindowManager::wmButtonPress -"
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::WindowManager::wmButtonPress -"
                 << " event: " << event
                 << " widget: " << widget
                 << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
@@ -384,11 +384,11 @@ namespace Oxygen
 
         }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         if( registered )
         {
             std::cerr
-                << "Oxygen::WindowManager::styleSetHook -"
+                << "Carbon::WindowManager::styleSetHook -"
                 << " registering: " << widget
                 << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << std::endl;
@@ -420,8 +420,8 @@ namespace Oxygen
         if( manager._dragAboutToStart || manager._dragInProgress )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::WindowManager::buttonReleaseHook -"
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::WindowManager::buttonReleaseHook -"
                 << " widget: " << widget
                 << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " " << gtk_widget_get_name( widget )
@@ -654,8 +654,8 @@ namespace Oxygen
 
             const DragStatus status( childrenUseEvent( widget, event, false ) );
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::WindowManager::useEvent -"
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::WindowManager::useEvent -"
                 << " event: " << event
                 << " widget: " << widget
                 << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
@@ -771,8 +771,8 @@ namespace Oxygen
                 }
 
 
-                #if OXYGEN_DEBUG
-                std::cerr << "Oxygen::WindowManager::childrenUseEvent -"
+                #if CARBON_DEBUG
+                std::cerr << "Carbon::WindowManager::childrenUseEvent -"
                     << " event: " << event
                     << " widget: " << childWidget
                     << " (" << G_OBJECT_TYPE_NAME( childWidget ) << ")"
@@ -797,11 +797,11 @@ namespace Oxygen
     bool WindowManager::widgetIsBlackListed( GtkWidget* widget ) const
     {
         BlackList::const_iterator iter( std::find_if( _blackList.begin(), _blackList.end(), BlackListFTor( G_OBJECT( widget ) ) ) );
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         if( iter == _blackList.end() ) return false;
         else {
 
-            std::cerr << "Oxygen::WindowManager::widgetIsBlackListed - widget: " << widget << " type: " << *iter << std::endl;
+            std::cerr << "Carbon::WindowManager::widgetIsBlackListed - widget: " << widget << " type: " << *iter << std::endl;
             return true;
 
         }
@@ -814,8 +814,8 @@ namespace Oxygen
     bool WindowManager::widgetHasBlackListedParent( GtkWidget* widget ) const
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WindowManager::widgetHasBlackListedParent - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WindowManager::widgetHasBlackListedParent - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         // loop over widget parent

@@ -1,8 +1,8 @@
-#ifndef oxygensliderdemowidget_h
-#define oxygensliderdemowidget_h
+#ifndef carbonsliderdemowidget_h
+#define carbonsliderdemowidget_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -24,13 +24,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendemowidget.h"
-#include "oxygensignal.h"
-#include "oxygentimer.h"
+#include "carbondemowidget.h"
+#include "carbonsignal.h"
+#include "carbontimer.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     class SliderDemoWidget: public DemoWidget

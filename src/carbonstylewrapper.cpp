@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -25,26 +25,26 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenstylewrapper.h"
+#include "carbonstylewrapper.h"
 
-#include "oxygen.h"
-#include "oxygenanimations.h"
-#include "oxygenargbhelper.h"
-#include "oxygencairoutils.h"
-#include "oxygendefines.h"
-#include "oxygengtkcellinfo.h"
-#include "oxygengtkdetails.h"
-#include "oxygengtktypenames.h"
-#include "oxygengtkutils.h"
-#include "oxygenmetrics.h"
-#include "oxygenstyle.h"
-#include "oxygenwidgetexplorer.h"
-#include "oxygenwindowmanager.h"
-#include "oxygencolorutils.h"
+#include "carbon.h"
+#include "carbonanimations.h"
+#include "carbonargbhelper.h"
+#include "carboncairoutils.h"
+#include "carbondefines.h"
+#include "carbongtkcellinfo.h"
+#include "carbongtkdetails.h"
+#include "carbongtktypenames.h"
+#include "carbongtkutils.h"
+#include "carbonmetrics.h"
+#include "carbonstyle.h"
+#include "carbonwidgetexplorer.h"
+#include "carbonwindowmanager.h"
+#include "carboncolorutils.h"
 #include "config.h"
 
 #include <iostream>
-namespace Oxygen
+namespace Carbon
 {
 
     //___________________________________________________________________________________________________________
@@ -60,9 +60,9 @@ namespace Oxygen
         GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_animated_button -"
+            << "Carbon::draw_animated_button -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << std::endl;
         #endif
@@ -107,9 +107,9 @@ namespace Oxygen
         g_return_if_fail( style && window );
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_flat_box -"
+            << "Carbon::draw_flat_box -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -679,8 +679,8 @@ namespace Oxygen
     Cairo::Surface processTabCloseButton(GtkWidget* widget, GtkStateType state)
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::processTabCloseButton("<<widget<<","<<state <<")"<< std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::processTabCloseButton("<<widget<<","<<state <<")"<< std::endl;
         #endif
 
         if(!widget)
@@ -731,9 +731,9 @@ namespace Oxygen
     {
         g_return_if_fail( style && window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_box -"
+            << "Carbon::draw_box -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -1648,9 +1648,9 @@ namespace Oxygen
         g_return_if_fail( style && window );
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_shadow -"
+            << "Carbon::draw_shadow -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2159,9 +2159,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_check -"
+            << "Carbon::draw_check -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2265,9 +2265,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_option -"
+            << "Carbon::draw_option -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2387,9 +2387,9 @@ namespace Oxygen
     {
         g_return_if_fail( style && window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_hline -"
+            << "Carbon::draw_hline -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " detail: " << (detail ? detail:"0x0" )
@@ -2470,9 +2470,9 @@ namespace Oxygen
     {
         g_return_if_fail( style && window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_vline -"
+            << "Carbon::draw_vline -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " detail: " << (detail ? detail:"0x0" )
@@ -2519,9 +2519,9 @@ namespace Oxygen
         g_return_if_fail( style && window );
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_arrow -"
+            << "Carbon::draw_arrow -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2573,14 +2573,14 @@ namespace Oxygen
                 gtk_menu_get_tearoff_state( GTK_MENU( gtk_widget_get_parent( widget ) ) ) )
             { Style::instance().renderWindowBackground( window, widget, clipRect, x-8, y-8, w+16, h+16); }
 
-            // disable highlight in menus, for consistancy with oxygen qt style
+            // disable highlight in menus, for consistancy with carbon qt style
             options &= ~( Focus|Hover );
 
             useWidgetStateEngine = false;
 
         } else if( d.isMenuItem() && !Gtk::gtk_parent_tree_view( widget ) ) {
 
-            // disable highlight in menus, for consistancy with oxygen qt style
+            // disable highlight in menus, for consistancy with carbon qt style
             options &= ~( Focus|Hover );
             role = Palette::WindowText;
             useWidgetStateEngine = false;
@@ -2728,9 +2728,9 @@ namespace Oxygen
     {
         g_return_if_fail( style && window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_expander -"
+            << "Carbon::draw_expander -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " expander: " << Gtk::TypeNames::expanderStyle( expanderStyle )
@@ -2809,9 +2809,9 @@ namespace Oxygen
         g_return_if_fail( style && window );
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_diamond -"
+            << "Carbon::draw_diamond -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2841,9 +2841,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_tab -"
+            << "Carbon::draw_tab -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2896,9 +2896,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_shadow_gap -"
+            << "Carbon::draw_shadow_gap -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -2961,9 +2961,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_box_gap -"
+            << "Carbon::draw_box_gap -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -3072,9 +3072,9 @@ namespace Oxygen
         g_return_if_fail( style && window );
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_slider -"
+            << "Carbon::draw_slider -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -3146,9 +3146,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_extension -"
+            << "Carbon::draw_extension -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -3327,9 +3327,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_focus -"
+            << "Carbon::draw_focus -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " detail: " << (detail ? detail:"0x0" )
@@ -3413,9 +3413,9 @@ namespace Oxygen
 
         Style::instance().sanitizeSize( window, w, h );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_handle -"
+            << "Carbon::draw_handle -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " shadow: " << Gtk::TypeNames::shadow( shadow )
@@ -3482,9 +3482,9 @@ namespace Oxygen
     {
         g_return_if_fail( style && window );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_resize_grip -"
+            << "Carbon::draw_resize_grip -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " edge: " << Gtk::TypeNames::windowEdge( edge )
@@ -3492,7 +3492,7 @@ namespace Oxygen
             << std::endl;
         #endif
 
-        // no resize grip in oxygen no matter what
+        // no resize grip in carbon no matter what
         return;
     }
 
@@ -3500,9 +3500,9 @@ namespace Oxygen
     static GdkPixbuf* render_stated_pixbuf( GdkPixbuf* source, GtkStateType state, bool useEffect )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::render_stated_pixbuf -"
+            << "Carbon::render_stated_pixbuf -"
             << " state: " << Gtk::TypeNames::state( state )
             << " useEffect: " << useEffect
             << std::endl;
@@ -3545,11 +3545,11 @@ namespace Oxygen
         const char* detail )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         const char* filename( source ? gtk_icon_source_get_filename( source ) : 0L );
         const char* iconname( source ? gtk_icon_source_get_icon_name( source ) : 0L );
         std::cerr
-            << "Oxygen::render_icon -"
+            << "Carbon::render_icon -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " file name: " << (filename ? filename:"0x0")
@@ -3637,9 +3637,9 @@ namespace Oxygen
         PangoLayout* layout)
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::draw_layout -"
+            << "Carbon::draw_layout -"
             << " widget: " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")"
             << " state: " << Gtk::TypeNames::state( state )
             << " detail: " << (detail ? detail:"0x0" )
@@ -3706,11 +3706,11 @@ namespace Oxygen
     }
 
     //_______________________________________________________________________________________________________________
-    void StyleWrapper::instanceInit( OxygenStyle* self )
+    void StyleWrapper::instanceInit( CarbonStyle* self )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleWrapper::instanceInit" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleWrapper::instanceInit" << std::endl;
         #endif
 
         // style initialization
@@ -3734,22 +3734,22 @@ namespace Oxygen
 
         // disable all animations for openoffice
         // and re-enable combobox animations
-        if( Oxygen::Style::instance().settings().applicationName().isOpenOffice() )
+        if( Carbon::Style::instance().settings().applicationName().isOpenOffice() )
         {
-            Oxygen::Style::instance().animations().setEnabled( false );
-            Oxygen::Style::instance().animations().setInnerShadowsEnabled( false );
-            Oxygen::Style::instance().animations().comboBoxEngine().setEnabled( true );
-            Oxygen::Style::instance().animations().backgroundHintEngine().setEnabled( true );
+            Carbon::Style::instance().animations().setEnabled( false );
+            Carbon::Style::instance().animations().setInnerShadowsEnabled( false );
+            Carbon::Style::instance().animations().comboBoxEngine().setEnabled( true );
+            Carbon::Style::instance().animations().backgroundHintEngine().setEnabled( true );
         }
 
     }
 
     //_______________________________________________________________________________________________________________
-    void StyleWrapper::classInit( OxygenStyleClass* klass )
+    void StyleWrapper::classInit( CarbonStyleClass* klass )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleWrapper::classInit" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleWrapper::classInit" << std::endl;
         #endif
 
         GtkStyleClass* style_class( GTK_STYLE_CLASS( klass ) );
@@ -3789,29 +3789,29 @@ namespace Oxygen
     void StyleWrapper::registerType( GTypeModule* module )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleWrapper::registerType" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleWrapper::registerType" << std::endl;
         #endif
 
         const GTypeInfo info =
         {
-            (guint16)sizeof( OxygenStyleClass ),
+            (guint16)sizeof( CarbonStyleClass ),
             (GBaseInitFunc) NULL,
             (GBaseFinalizeFunc) NULL,
             (GClassInitFunc) classInit,
             (GClassFinalizeFunc) NULL,
             NULL,
-            (guint16)sizeof( OxygenStyle ),
+            (guint16)sizeof( CarbonStyle ),
             0,
             (GInstanceInitFunc) instanceInit,
             NULL
         };
 
         _typeInfo = info;
-        _type = g_type_module_register_type( module, GTK_TYPE_STYLE, "OxygenStyle", &_typeInfo, GTypeFlags(0 ) );
+        _type = g_type_module_register_type( module, GTK_TYPE_STYLE, "CarbonStyle", &_typeInfo, GTypeFlags(0 ) );
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::StyleWrapper::registerType - done" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::StyleWrapper::registerType - done" << std::endl;
         #endif
 
     }
@@ -3823,7 +3823,7 @@ namespace Oxygen
         // register version type
         GType type( g_type_register_static_simple(
             G_TYPE_OBJECT,
-            OXYGEN_VERSION_TYPE_NAME,
+            CARBON_VERSION_TYPE_NAME,
             (guint16)sizeof( GObjectClass ),
             (GClassInitFunc) NULL,
             (guint16)sizeof( GObject ),
@@ -3831,8 +3831,8 @@ namespace Oxygen
             G_TYPE_FLAG_ABSTRACT ) );
 
         // quark
-        GQuark quark( g_quark_from_string( OXYGEN_VERSION_QUARK_NAME ) );
-        g_type_set_qdata( type, quark, (gpointer) OXYGEN_VERSION );
+        GQuark quark( g_quark_from_string( CARBON_VERSION_QUARK_NAME ) );
+        g_type_set_qdata( type, quark, (gpointer) CARBON_VERSION );
 
     }
 

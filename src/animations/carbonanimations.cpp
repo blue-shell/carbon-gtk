@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,15 +19,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenanimations.h"
-#include "../oxygengtkutils.h"
-#include "../oxygenqtsettings.h"
+#include "carbonanimations.h"
+#include "../carbongtkutils.h"
+#include "../carbonqtsettings.h"
 #include "../config.h"
 
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________
@@ -35,8 +35,8 @@ namespace Oxygen
         _innerShadowsEnabled( true ),
         _hooksInitialized( false )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Animations::Animations" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Animations::Animations" << std::endl;
         #endif
 
         // create engines
@@ -74,8 +74,8 @@ namespace Oxygen
     //____________________________________________________________________________________________
     Animations::~Animations( void )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Animations::~Animations" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Animations::~Animations" << std::endl;
         #endif
 
         // delete all engines
@@ -151,7 +151,7 @@ namespace Oxygen
 
         // https://bugzilla.gnome.org/show_bug.cgi?id=643416
         #if ENABLE_INNER_SHADOWS_HACK
-        if(!getenv("OXYGEN_DISABLE_INNER_SHADOWS_HACK"))
+        if(!getenv("CARBON_DISABLE_INNER_SHADOWS_HACK"))
         { _innerShadowHook.connect( "realize", (GSignalEmissionHook)innerShadowHook, this ); }
         #endif
 
@@ -167,8 +167,8 @@ namespace Oxygen
 
         if( _allWidgets.find( widget ) != _allWidgets.end() ) return false;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Animations::registerWidget - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Animations::registerWidget - " << widget << " (" << (widget ? G_OBJECT_TYPE_NAME( widget ):"0x0") << ")" << std::endl;
         #endif
 
         Signal destroyId;
@@ -182,8 +182,8 @@ namespace Oxygen
     void Animations::unregisterWidget( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::Animations::unregisterWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::Animations::unregisterWidget - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         // find in map
@@ -297,9 +297,9 @@ namespace Oxygen
         GtkWidget* child(gtk_bin_get_child(GTK_BIN(parent)));
         if(child!=widget) return TRUE;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::Animations::innerShadowHook -"
+            << "Carbon::Animations::innerShadowHook -"
             << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME(widget) << ")"
             << " parent: " << parent << " (" << G_OBJECT_TYPE_NAME(parent) << ")"
             << " widget path: " << Gtk::gtk_widget_path( widget )
@@ -340,9 +340,9 @@ namespace Oxygen
             GtkFrame *frame( GTK_FRAME( gtk_widget_get_parent( widget ) ) );
             if( widget == gtk_frame_get_label_widget( frame ) && !Gtk::gtk_widget_find_parent( widget, "GtkPizza" ) )
             {
-                #if OXYGEN_DEBUG
+                #if CARBON_DEBUG
                 std::cout
-                    << "Oxygen::Animations::realizationHook -"
+                    << "Carbon::Animations::realizationHook -"
                     << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                     << " parent: " << frame << " (" << G_OBJECT_TYPE_NAME( frame ) << ")"
                     << std::endl;

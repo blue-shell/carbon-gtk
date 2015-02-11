@@ -1,7 +1,7 @@
-#ifndef oxygengtkdetails_h
-#define oxygengtkdetails_h
+#ifndef carbongtkdetails_h
+#define carbongtkdetails_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,7 +21,7 @@
 */
 
 #include<string>
-namespace Oxygen
+namespace Carbon
 {
     namespace Gtk
     {

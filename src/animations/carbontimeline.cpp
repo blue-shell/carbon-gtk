@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,12 +18,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentimeline.h"
-#include "oxygentimelineserver.h"
+#include "carbontimeline.h"
+#include "carbontimelineserver.h"
 
 #include <cassert>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________________

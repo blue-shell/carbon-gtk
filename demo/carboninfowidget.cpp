@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2014 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -21,15 +21,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygeninfowidget.h"
-#include "oxygenversion.h"
+#include "carboninfowidget.h"
+#include "carbonversion.h"
 #include "config.h"
 
 #include <iostream>
 #include <string>
 #include <sstream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //____________________________________________________
@@ -63,7 +63,7 @@ namespace Oxygen
             // application name
             GtkWidget* label;
             label = boldLabel();
-            gtk_label_set_text( GTK_LABEL( label ), "oxygen-gtk-demo" );
+            gtk_label_set_text( GTK_LABEL( label ), "carbon-gtk-demo" );
             gtk_label_set_selectable( GTK_LABEL( label ), true );
             gtk_misc_set_alignment( GTK_MISC( label ), 0, 0.5 );
             gtk_box_pack_start( GTK_BOX( box ), label, true, true, 0 );
@@ -72,7 +72,7 @@ namespace Oxygen
             // version
             {
                 std::ostringstream stream;
-                stream << "version " << OXYGEN_VERSION;
+                stream << "version " << CARBON_VERSION;
                 label = boldLabel();
                 gtk_label_set_selectable( GTK_LABEL( label ), true );
                 gtk_label_set_text( GTK_LABEL( label ), stream.str().c_str() );
@@ -97,7 +97,7 @@ namespace Oxygen
             if( !libVersion.empty() )
             {
                 std::ostringstream stream;
-                stream << "using oxygen-gtk version " << libVersion;
+                stream << "using carbon-gtk version " << libVersion;
                 gtk_label_set_selectable( GTK_LABEL( label ), true );
                 label = gtk_label_new( stream.str().c_str() );
                 gtk_misc_set_alignment( GTK_MISC( label ), 0, 0.5 );
@@ -110,7 +110,7 @@ namespace Oxygen
             gtk_widget_show( label );
 
             // description
-            label = gtk_label_new( "Gtk+ widgets preview for Oxygen" );
+            label = gtk_label_new( "Gtk+ widgets preview for Carbon" );
             gtk_label_set_selectable( GTK_LABEL( label ), true );
             gtk_misc_set_alignment( GTK_MISC( label ), 0, 0.5 );
             gtk_box_pack_start( GTK_BOX( box ), label, true, true, 0 );
@@ -131,7 +131,7 @@ namespace Oxygen
             gtk_widget_show( label );
 
             label = gtk_label_new( 0L );
-            gtk_label_set_markup( GTK_LABEL( label ), "<a href=\"https://projects.kde.org/projects/playground/artwork/oxygen-gtk\">https://projects.kde.org/projects/playground/artwork/oxygen-gtk</a>" );
+            gtk_label_set_markup( GTK_LABEL( label ), "<a href=\"https://projects.kde.org/projects/playground/artwork/carbon-gtk\">https://projects.kde.org/projects/playground/artwork/carbon-gtk</a>" );
             gtk_label_set_selectable( GTK_LABEL( label ), true );
             gtk_misc_set_alignment( GTK_MISC( label ), 0, 0.5 );
             gtk_box_pack_start( GTK_BOX( box ), label, true, true, 0 );

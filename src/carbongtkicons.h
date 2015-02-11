@@ -1,7 +1,7 @@
-#ifndef oxygengtkicons_h
-#define oxygengtkicons_h
+#ifndef carbongtkicons_h
+#define carbongtkicons_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -25,8 +25,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygengtkrc.h"
-#include "oxygenpathlist.h"
+#include "carbongtkrc.h"
+#include "carbonpathlist.h"
 
 #include <string>
 #include <map>
@@ -34,7 +34,7 @@
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! generate translations between kde icon names and gtk icons

@@ -1,8 +1,8 @@
-#ifndef oxygeninputdemowidget_h
-#define oxygeninputdemowidget_h
+#ifndef carboninputdemowidget_h
+#define carboninputdemowidget_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -24,13 +24,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendemowidget.h"
-#include "oxygensignal.h"
+#include "carbondemowidget.h"
+#include "carbonsignal.h"
 
 #include <gtk/gtk.h>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     class InputDemoWidget: public DemoWidget

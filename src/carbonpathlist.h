@@ -1,7 +1,7 @@
-#ifndef oxygenpathlist_h
-#define oxygenpathlist_h
+#ifndef carbonpathlist_h
+#define carbonpathlist_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -30,7 +30,7 @@
 #include <string>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     typedef std::set<std::string> PathSet;

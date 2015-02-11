@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,15 +19,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwindecobutton.h"
-#include "oxygenrgba.h"
-#include "oxygencairoutils.h"
-#include "oxygencolorutils.h"
-#include "oxygenqtsettings.h"
-#include "oxygenstylehelper.h"
+#include "carbonwindecobutton.h"
+#include "carbonrgba.h"
+#include "carboncairoutils.h"
+#include "carboncolorutils.h"
+#include "carbonqtsettings.h"
+#include "carbonstylehelper.h"
 #include <cmath>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
@@ -79,7 +79,7 @@ namespace Oxygen
         cairo_set_line_join( context, CAIRO_LINE_JOIN_ROUND );
 
         cairo_scale( context, double(w)/22.0, double(h)/22.0 );
-        Oxygen::cairo_set_source( context, ColorUtils::lightColor( base ) );
+        Carbon::cairo_set_source( context, ColorUtils::lightColor( base ) );
         drawIcon( context, w, h );
 
         cairo_translate( context, 0, -1.5 );

@@ -1,7 +1,7 @@
-#ifndef oxygenstylehelper_h
-#define oxygenstylehelper_h
+#ifndef carbonstylehelper_h
+#define carbonstylehelper_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,15 +20,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencachekey.h"
-#include "oxygencairosurface.h"
-#include "oxygencairosurfacecache.h"
-#include "oxygentileset.h"
-#include "oxygentilesetcache.h"
+#include "carboncachekey.h"
+#include "carboncairosurface.h"
+#include "carboncairosurfacecache.h"
+#include "carbontileset.h"
+#include "carbontilesetcache.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     // forward declaration
     namespace Cairo
@@ -175,7 +175,7 @@ namespace Oxygen
         //!@name windeco caches
         //@{
 
-        /*! needed to oxygenwindowshadow and drawWindowDecoration() */
+        /*! needed to carbonwindowshadow and drawWindowDecoration() */
         TileSetCache<WindowShadowKey>& windowShadowCache( void )
         { return _windowShadowCache; }
 
@@ -201,7 +201,7 @@ namespace Oxygen
 
         //@}
 
-        //! window decorations button for MDI windows from oxygen-qt, used as tab close button in oxygen-gtk
+        //! window decorations button for MDI windows from carbon-qt, used as tab close button in carbon-gtk
         const Cairo::Surface& dockWidgetButton(const ColorUtils::Rgba& base, bool pressed, int size);
 
         protected:

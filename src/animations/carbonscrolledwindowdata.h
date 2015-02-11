@@ -1,7 +1,7 @@
-#ifndef oxygenscrolledwindowdata_h
-#define oxygenscrolledwindowdata_h
+#ifndef carbonscrolledwindowdata_h
+#define carbonscrolledwindowdata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -21,13 +21,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygensignal.h"
+#include "carbonsignal.h"
 
 #include <gtk/gtk.h>
 #include <algorithm>
 #include <map>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! handle hover in scrolledwindows

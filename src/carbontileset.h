@@ -1,7 +1,7 @@
-#ifndef oxygentileset_h
-#define oxygentileset_h
+#ifndef carbontileset_h
+#define carbontileset_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This library is free software; you can redistribute it and/or
@@ -20,13 +20,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenflags.h"
-#include "oxygencairosurface.h"
+#include "carbonflags.h"
+#include "carboncairosurface.h"
 
 #include <cairo.h>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     // forward declaration

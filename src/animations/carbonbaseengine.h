@@ -1,7 +1,7 @@
-#ifndef oxygenbaseengine_h
-#define oxygenbaseengine_h
+#ifndef carbonbaseengine_h
+#define carbonbaseengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -23,7 +23,7 @@
 #include <gtk/gtk.h>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! forward declaration

@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,22 +18,22 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencomboboxdata.h"
-#include "../oxygengtkutils.h"
+#include "carboncomboboxdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 #include <iostream>
 #include <cassert>
 #include <algorithm>
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
     void ComboBoxData::connect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxData::connect - widget: " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxData::connect - widget: " << widget << std::endl;
         #endif
 
         // set pointers to widgets
@@ -58,8 +58,8 @@ namespace Oxygen
     //________________________________________________________________________________
     void ComboBoxData::disconnect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxData::disconnect - widget: " << widget << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxData::disconnect - widget: " << widget << std::endl;
         #endif
 
         _stateChangeId.disconnect();
@@ -87,7 +87,7 @@ namespace Oxygen
 
         if( _button._widget )
         {
-            std::cerr << "Oxygen::WindowManager::wmButtonPress - warning: a button was already set for this combobox" << std::endl;
+            std::cerr << "Carbon::WindowManager::wmButtonPress - warning: a button was already set for this combobox" << std::endl;
             _button._toggledId.disconnect();
             _button._sizeAllocateId.disconnect();
         }
@@ -199,9 +199,9 @@ namespace Oxygen
         if( _hoverData.find( widget ) == _hoverData.end() )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::ComboBoxData::registerChild -"
+                << "Carbon::ComboBoxData::registerChild -"
                 << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << std::endl;
             #endif
@@ -238,9 +238,9 @@ namespace Oxygen
     void ComboBoxData::unregisterChild( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ComboBoxData::unregisterChild -"
+            << "Carbon::ComboBoxData::unregisterChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -265,9 +265,9 @@ namespace Oxygen
 
         if( !_widget ) return;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ComboBoxData::ChildData::disconnect -"
+            << "Carbon::ComboBoxData::ChildData::disconnect -"
             << " " << _widget << " (" << G_OBJECT_TYPE_NAME( _widget ) << ")"
             << std::endl;
         #endif
@@ -294,8 +294,8 @@ namespace Oxygen
     {
         if( !_widget ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxData::HoverData::disconnect -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxData::HoverData::disconnect -"
             << " " << _widget << " (" << G_OBJECT_TYPE_NAME( _widget ) << ")"
             << std::endl;
         #endif
@@ -311,9 +311,9 @@ namespace Oxygen
     //____________________________________________________________________________________________
     gboolean ComboBoxData::childDestroyNotifyEvent( GtkWidget* widget, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ComboBoxData::childDestroyNotifyEvent -"
+            << "Carbon::ComboBoxData::childDestroyNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -341,8 +341,8 @@ namespace Oxygen
     gboolean ComboBoxData::enterNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxData::enterNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxData::enterNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -355,8 +355,8 @@ namespace Oxygen
     gboolean ComboBoxData::leaveNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ComboBoxData::leaveNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ComboBoxData::leaveNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif

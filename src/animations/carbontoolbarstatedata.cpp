@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,13 +18,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentoolbarstatedata.h"
-#include "../oxygengtkutils.h"
+#include "carbontoolbarstatedata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________
@@ -32,9 +32,9 @@ namespace Oxygen
     void ToolBarStateData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::connect - "
+            << "Carbon::ToolBarStateData::connect - "
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -62,9 +62,9 @@ namespace Oxygen
     void ToolBarStateData::disconnect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::disconnect - "
+            << "Carbon::ToolBarStateData::disconnect - "
             << " " << _target << " (" << (_target ? G_OBJECT_TYPE_NAME( _target ) : "0x0") << ")"
             << std::endl;
         #endif
@@ -97,9 +97,9 @@ namespace Oxygen
         if( _hoverData.find( widget ) == _hoverData.end() )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::ToolBarStateData::registerChild -"
+                << "Carbon::ToolBarStateData::registerChild -"
                 << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << std::endl;
             #endif
@@ -123,9 +123,9 @@ namespace Oxygen
     void ToolBarStateData::unregisterChild( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::unregisterChild -"
+            << "Carbon::ToolBarStateData::unregisterChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -274,9 +274,9 @@ namespace Oxygen
     //____________________________________________________________________________________________
     gboolean ToolBarStateData::childDestroyNotifyEvent( GtkWidget* widget, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::childDestroyNotifyEvent -"
+            << "Carbon::ToolBarStateData::childDestroyNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -288,9 +288,9 @@ namespace Oxygen
     gboolean ToolBarStateData::childEnterNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::childEnterNotifyEvent -"
+            << "Carbon::ToolBarStateData::childEnterNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -303,9 +303,9 @@ namespace Oxygen
     gboolean ToolBarStateData::childLeaveNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::childLeaveNotifyEvent -"
+            << "Carbon::ToolBarStateData::childLeaveNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -318,9 +318,9 @@ namespace Oxygen
     //________________________________________________________________________________
     gboolean ToolBarStateData::leaveNotifyEvent( GtkWidget* widget, GdkEventCrossing*, gpointer pointer )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ToolBarStateData::leaveNotifyEvent -"
+            << "Carbon::ToolBarStateData::leaveNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif

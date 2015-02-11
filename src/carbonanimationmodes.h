@@ -1,8 +1,8 @@
-#ifndef oxygenanimationmodes_h
-#define oxygenanimationmodes_h
+#ifndef carbonanimationmodes_h
+#define carbonanimationmodes_h
 
 /*
-* oxygenanimationmodes.h
+* carbonanimationmodes.h
 * animation modes
 * -------------------
 *
@@ -27,9 +27,9 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenflags.h"
+#include "carbonflags.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! animation type

@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,12 +19,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwindowshadow.h"
-#include "oxygencachekey.h"
-#include "oxygencairoutils.h"
-#include "oxygencolorutils.h"
+#include "carbonwindowshadow.h"
+#include "carboncachekey.h"
+#include "carboncairoutils.h"
+#include "carboncolorutils.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________________________________

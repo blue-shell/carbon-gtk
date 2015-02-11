@@ -1,6 +1,6 @@
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -19,15 +19,15 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygensignal.h"
+#include "carbonsignal.h"
 #include "../config.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
-    #if OXYGEN_DEBUG
+    #if CARBON_DEBUG
     static int counter( 0 );
     #endif
 
@@ -44,8 +44,8 @@ namespace Oxygen
         if( !g_signal_lookup( signal.c_str(), G_OBJECT_TYPE(object) ) )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::Signal::connect - signal " << signal << " not installed on widget " << object << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::Signal::connect - signal " << signal << " not installed on widget " << object << std::endl;
             #endif
 
             return false;
@@ -57,9 +57,9 @@ namespace Oxygen
         if(after) _id = g_signal_connect_after( object, signal.c_str(), callback, data );
         else _id = g_signal_connect( object, signal.c_str(), callback, data );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         ++counter;
-        std::cerr << "Oxygen::Signal::connect - _id: " << _id << " counter: " << counter << std::endl;
+        std::cerr << "Carbon::Signal::connect - _id: " << _id << " counter: " << counter << std::endl;
         #endif
 
         return true;
@@ -74,9 +74,9 @@ namespace Oxygen
         if( _object && _id > 0 )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             --counter;
-            std::cerr << "Oxygen::Signal::disconnect - _id: " << _id << " counter: " << counter << std::endl;
+            std::cerr << "Carbon::Signal::disconnect - _id: " << _id << " counter: " << counter << std::endl;
             #endif
 
             g_signal_handler_disconnect( _object, _id );

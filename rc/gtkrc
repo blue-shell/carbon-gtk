@@ -1,4 +1,4 @@
-# this file is part of the oxygen gtk engine
+# this file is part of the carbon gtk engine
 # Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 # Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 #
@@ -23,8 +23,8 @@
 # Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
-# oxygen's generic style options
-style "oxygen-default"
+# carbon's generic style options
+style "carbon-default"
 {
     GtkPaned::handle-size = 3
 
@@ -70,56 +70,56 @@ style "oxygen-default"
     GtkStatusbar::shadow-type = GTK_SHADOW_NONE
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
-    engine "oxygen-gtk"
+    engine "carbon-gtk"
     {}
 }
 
-class "*" style "oxygen-default"
+class "*" style "carbon-default"
 
 # force resize-handle size to zero
-style "oxygen-sizegrip" = "oxygen-default"
+style "carbon-sizegrip" = "carbon-default"
 {
 
     GtkWindow::resize-grip-height = 0
     GtkWindow::resize-grip-width = 0
 }
 
-class "GtkWidget" style "oxygen-sizegrip"
+class "GtkWidget" style "carbon-sizegrip"
 
 # menuitems padding
-style "oxygen-menubar" = "oxygen-default"
+style "carbon-menubar" = "carbon-default"
 {
     xthickness = 1
     ythickness = 1
 }
 
-class "GtkMenuBar" style "oxygen-menubar"
+class "GtkMenuBar" style "carbon-menubar"
 
 # menuitems padding
-style "oxygen-menubaritem" = "oxygen-default"
+style "carbon-menubaritem" = "carbon-default"
 {
     xthickness = 3
     ythickness = 2
 }
 
-style "oxygen-menuitem" = "oxygen-default"
+style "carbon-menuitem" = "carbon-default"
 {
     xthickness = 1
     ythickness = 5
 }
 
-style "oxygen-separator-menuitem" = "oxygen-default"
+style "carbon-separator-menuitem" = "carbon-default"
 {
     xthickness = 1
     ythickness = 1
 }
 
-class "GtkMenuItem" style "oxygen-menubaritem"
-widget_class "*<GtkMenu>.<GtkMenuItem>" style "oxygen-menuitem"
-widget_class "*<GtkMenu>.<GtkSeparatorMenuItem>" style "oxygen-separator-menuitem"
+class "GtkMenuItem" style "carbon-menubaritem"
+widget_class "*<GtkMenu>.<GtkMenuItem>" style "carbon-menuitem"
+widget_class "*<GtkMenu>.<GtkSeparatorMenuItem>" style "carbon-separator-menuitem"
 
 # toolbuttons with menu
-style "oxygen-menutoolbutton" = "oxygen-default"
+style "carbon-menutoolbutton" = "carbon-default"
 {
     xthickness=1
     ythickness=1
@@ -127,26 +127,26 @@ style "oxygen-menutoolbutton" = "oxygen-default"
     GtkWidget::focus-line-width=0
 }
 
-class "*GtkMenuToolButton" style "oxygen-menutoolbutton"
-widget_class "*.GtkMenuToolButton.*Box.GtkToggleButton" style "oxygen-menutoolbutton"
+class "*GtkMenuToolButton" style "carbon-menutoolbutton"
+widget_class "*.GtkMenuToolButton.*Box.GtkToggleButton" style "carbon-menutoolbutton"
 
 # icon views
-style "oxygen-iconview" = "oxygen-default"
+style "carbon-iconview" = "carbon-default"
 { GtkWidget::focus-line-width=0 }
 
-class "GtkIconView" style "oxygen-iconview"
+class "GtkIconView" style "carbon-iconview"
 
 # notebook settings
-style "oxygen-notebook" = "oxygen-default"
+style "carbon-notebook" = "carbon-default"
 {
     xthickness = 4
     ythickness = 4
 }
 
-class "GtkNotebook" style "oxygen-notebook"
+class "GtkNotebook" style "carbon-notebook"
 
 # comboboxes
-style "oxygen-combobox" = "oxygen-default"
+style "carbon-combobox" = "carbon-default"
 {
     # must set combobox frame x thickness to 0, otherwise there
     # is a dead area between combobox text and button
@@ -154,92 +154,92 @@ style "oxygen-combobox" = "oxygen-default"
     ythickness = 2
 }
 
-style "oxygen-combobox-frame" = "oxygen-default"
+style "carbon-combobox-frame" = "carbon-default"
 {
     xthickness = 4
     ythickness = 4
 }
 
-class "GtkComboBox" style "oxygen-combobox"
-widget_class "*<GtkComboBox>.<GtkFrame>" style "oxygen-combobox-frame"
+class "GtkComboBox" style "carbon-combobox"
+widget_class "*<GtkComboBox>.<GtkFrame>" style "carbon-combobox-frame"
 
 # editable combobox margins
-style "oxygen-combobox-entry" = "oxygen-default"
+style "carbon-combobox-entry" = "carbon-default"
 {
     xthickness = 1
     ythickness = 1
 }
 
-class "GtkComboBoxEntry" style "oxygen-combobox-entry"
+class "GtkComboBoxEntry" style "carbon-combobox-entry"
 
 # GtkCombo
-style "oxygen-combo-button" = "oxygen-combobox-entry"
+style "carbon-combo-button" = "carbon-combobox-entry"
 {
     xthickness = 0
     ythickness = 2
 }
 
-widget_class "*<GtkCombo>.<GtkButton>" style "oxygen-combo-button"
+widget_class "*<GtkCombo>.<GtkButton>" style "carbon-combo-button"
 
 # option menu
-style "oxygen-option-menu" = "oxygen-default"
+style "carbon-option-menu" = "carbon-default"
 {
     xthickness = 4
     ythickness = 0
 }
 
-class "GtkOptionMenu" style "oxygen-option-menu"
+class "GtkOptionMenu" style "carbon-option-menu"
 
 # vertical separators need enough room
-style "oxygen-vseparator" = "oxygen-default"
+style "carbon-vseparator" = "carbon-default"
 {
     xthickness = 3
     ythickness = 2
 }
 
-class "GtkVSeparator" style "oxygen-vseparator"
+class "GtkVSeparator" style "carbon-vseparator"
 
 # 2pixels thickness.
-style "oxygen-w2" = "oxygen-default"
+style "carbon-w2" = "carbon-default"
 {
     xthickness = 2
     ythickness = 2
 }
 
-class "GtkScrolledWindow" style "oxygen-w2"
-class "GtkViewport" style "oxygen-w2"
-class "GtkFrame" style "oxygen-w2"
-class "gtkmm__GtkSpinButton" style "oxygen-w2"
+class "GtkScrolledWindow" style "carbon-w2"
+class "GtkViewport" style "carbon-w2"
+class "GtkFrame" style "carbon-w2"
+class "gtkmm__GtkSpinButton" style "carbon-w2"
 
 # 1pixels thickness.
-style "oxygen-progressbar" = "oxygen-default"
+style "carbon-progressbar" = "carbon-default"
 {
     xthickness = 1
     ythickness = 0
 }
-class "GtkProgressBar" style "oxygen-progressbar"
+class "GtkProgressBar" style "carbon-progressbar"
 
 # tree headers
-style "oxygen-header" = "oxygen-default"
+style "carbon-header" = "carbon-default"
 {
     xthickness = 2
     ythickness = 0
 }
-widget_class "*<GtkTreeView>.<GtkButton>" style "oxygen-header"
-widget_class "*<GtkList>.<GtkButton>" style "oxygen-header"
-widget_class "*GimpThumbBox*.<GtkEventBox>.<GtkVBox>.<GtkButton>" style "oxygen-header"
+widget_class "*<GtkTreeView>.<GtkButton>" style "carbon-header"
+widget_class "*<GtkList>.<GtkButton>" style "carbon-header"
+widget_class "*GimpThumbBox*.<GtkEventBox>.<GtkVBox>.<GtkButton>" style "carbon-header"
 
 #############
 # Workarounds
 #
 # # gimp
 # # this is commented, as it is apparently crashing for gimp-2.7
-# style "oxygen-gimp-scale"
+# style "carbon-gimp-scale"
 # {
 #     # this ensures that toolpanels fonts in gimp is identical
 #     # to default font (which otherwise is ugly
 #     GimpDock::font-scale = 1.01
 # }
 #
-# class "*" style "oxygen-gimp-scale"
+# class "*" style "carbon-gimp-scale"
 

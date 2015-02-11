@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,16 +19,16 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenscrolledwindowdata.h"
-#include "../oxygengtkutils.h"
+#include "carbonscrolledwindowdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
-#include "../oxygencairocontext.h"
-#include "oxygenanimations.h"
+#include "../carboncairocontext.h"
+#include "carbonanimations.h"
 
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
@@ -53,9 +53,9 @@ namespace Oxygen
         GtkWidget* child( gtk_bin_get_child( GTK_BIN( widget ) ) );
         if( !child ) return;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ScrolledWindowData::connect -"
+            << "Carbon::ScrolledWindowData::connect -"
             << " child: " << child << " (" << G_OBJECT_TYPE_NAME( child ) << ")"
             << std::endl;
         #endif
@@ -127,9 +127,9 @@ namespace Oxygen
         if( _childrenData.find( widget ) == _childrenData.end() )
         {
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             std::cerr
-                << "Oxygen::ScrolledWindowData::registerChild -"
+                << "Carbon::ScrolledWindowData::registerChild -"
                 << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << std::endl;
             #endif
@@ -179,9 +179,9 @@ namespace Oxygen
         ChildDataMap::iterator iter( _childrenData.find( widget ) );
         if( iter == _childrenData.end() ) return;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ScrolledWindowData::unregisterChild -"
+            << "Carbon::ScrolledWindowData::unregisterChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -192,16 +192,16 @@ namespace Oxygen
     }
 
     //________________________________________________________________________________
-    #if OXYGEN_DEBUG
+    #if CARBON_DEBUG
     void ScrolledWindowData::ChildData::disconnect( GtkWidget* widget )
     #else
     void ScrolledWindowData::ChildData::disconnect( GtkWidget* )
     #endif
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ScrolledWindowData::ChildData::disconnect -"
+            << "Carbon::ScrolledWindowData::ChildData::disconnect -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -219,9 +219,9 @@ namespace Oxygen
     //____________________________________________________________________________________________
     gboolean ScrolledWindowData::childDestroyNotifyEvent( GtkWidget* widget, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ScrolledWindowData::childDestroyNotifyEvent -"
+            << "Carbon::ScrolledWindowData::childDestroyNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -233,8 +233,8 @@ namespace Oxygen
     gboolean ScrolledWindowData::enterNotifyEvent( GtkWidget* widget, GdkEventCrossing* event, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ScrolledWindowData::enterNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ScrolledWindowData::enterNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -249,8 +249,8 @@ namespace Oxygen
     gboolean ScrolledWindowData::leaveNotifyEvent( GtkWidget* widget, GdkEventCrossing* event, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ScrolledWindowData::leaveNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ScrolledWindowData::leaveNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -265,8 +265,8 @@ namespace Oxygen
     gboolean ScrolledWindowData::focusInNotifyEvent( GtkWidget* widget, GdkEvent*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ScrolledWindowData::focusInNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ScrolledWindowData::focusInNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -279,8 +279,8 @@ namespace Oxygen
     gboolean ScrolledWindowData::focusOutNotifyEvent( GtkWidget* widget, GdkEvent*, gpointer data )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ScrolledWindowData::focusOutNotifyEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ScrolledWindowData::focusOutNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif

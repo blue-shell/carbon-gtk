@@ -1,7 +1,7 @@
-#ifndef oxygengtkutils_h
-#define oxygengtkutils_h
+#ifndef carbongtkutils_h
+#define carbongtkutils_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -28,9 +28,9 @@
 #include <gtk/gtk.h>
 #include <string>
 
-#include "oxygenrgba.h"
+#include "carbonrgba.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! GdkRectangle streamer
@@ -74,7 +74,7 @@ namespace Oxygen
         //@!name gdk utilities
         //@{
 
-        //! returns OxygenRgba color from GdkColor
+        //! returns CarbonRgba color from GdkColor
         inline ColorUtils::Rgba gdk_get_color( const GdkColor& color )
         {
             return ColorUtils::Rgba(
@@ -392,7 +392,7 @@ namespace Oxygen
         //@{
 
         //! returns true if position is in hovered tab
-        //* this should move to OxygenTabWidgetData
+        //* this should move to CarbonTabWidgetData
         bool gtk_notebook_tab_contains( GtkWidget*, int tab, int x, int y );
 
         //! returns tab matching position or -1 if none

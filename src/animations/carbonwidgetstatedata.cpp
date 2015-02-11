@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,20 +18,20 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwidgetstatedata.h"
+#include "carbonwidgetstatedata.h"
 #include "../config.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
     void WidgetStateData::connect( GtkWidget* widget )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WidgetStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WidgetStateData::connect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _target = widget;
@@ -41,8 +41,8 @@ namespace Oxygen
     //_____________________________________________
     void WidgetStateData::disconnect( GtkWidget* widget )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::WidgetStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::WidgetStateData::disconnect - " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")" << std::endl;
         #endif
 
         _timeLine.disconnect();
@@ -60,9 +60,9 @@ namespace Oxygen
         // check state and update
         if( state == _state ) return false;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::WidgetStateData::updateState - "
+            << "Carbon::WidgetStateData::updateState - "
             << _target << " (" << ( _target ? std::string( G_OBJECT_TYPE_NAME( _target ) ) : "none" ) << ")"
             << " state: " << state
             << std::endl;
@@ -85,9 +85,9 @@ namespace Oxygen
 
         WidgetStateData& data( *static_cast<WidgetStateData*>( pointer ) );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::WidgetStateData::updateState - "
+            << "Carbon::WidgetStateData::updateState - "
             << data._target << " (" << G_OBJECT_TYPE_NAME( data._target ) << ")"
             << " state: " << data._state
             << " rect: " << data._dirtyRect

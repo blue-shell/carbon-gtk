@@ -1,9 +1,9 @@
-#ifndef oxygenpropertynames_h
-#define oxygenpropertynames_h
+#ifndef carbonpropertynames_h
+#define carbonpropertynames_h
 
 /*
-* oxygenpropertynames.h
-* hard-coded property names to disable some of oxygen features
+* carbonpropertynames.h
+* hard-coded property names to disable some of carbon features
 * -------------------
 *
 * Copyright (c) 2012 Hugo Pereira Da Costa <hugo.pereira@free.fr>
@@ -27,7 +27,7 @@
 * MA 02110-1301, USA.
 */
 
-namespace Oxygen
+namespace Carbon
 {
 
     struct PropertyNames

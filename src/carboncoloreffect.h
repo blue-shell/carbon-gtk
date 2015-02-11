@@ -1,7 +1,7 @@
-#ifndef oxygencoloreffect_h
-#define oxygencoloreffect_h
+#ifndef carboncoloreffect_h
+#define carboncoloreffect_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/colors/kcolorscheme.h
@@ -23,12 +23,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenpalette.h"
-#include "oxygenrgba.h"
+#include "carbonpalette.h"
+#include "carbonrgba.h"
 
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     // forward declaration

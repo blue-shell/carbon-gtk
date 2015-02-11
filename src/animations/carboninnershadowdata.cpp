@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,14 +19,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygeninnershadowdata.h"
-#include "../oxygengtkutils.h"
+#include "carboninnershadowdata.h"
+#include "../carbongtkutils.h"
 #include "../config.h"
-#include "../oxygencairocontext.h"
-#include "../oxygencairoutils.h"
-#include "oxygenanimations.h"
-#include "../oxygenstyle.h"
-#include "../oxygenmetrics.h"
+#include "../carboncairocontext.h"
+#include "../carboncairoutils.h"
+#include "carbonanimations.h"
+#include "../carbonstyle.h"
+#include "../carbonmetrics.h"
 
 #include <gtk/gtk.h>
 #include <cstdlib>
@@ -34,7 +34,7 @@
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
@@ -54,9 +54,9 @@ namespace Oxygen
         GtkWidget* child( gtk_bin_get_child( GTK_BIN( widget ) ) );
         if( !child ) return;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::InnerShadowData::connect -"
+            << "Carbon::InnerShadowData::connect -"
             << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << " child: " << child << " (" << G_OBJECT_TYPE_NAME( child ) << ")"
             << std::endl;
@@ -92,9 +92,9 @@ namespace Oxygen
         if( gtk_scrolled_window_get_shadow_type( GTK_SCROLLED_WINDOW( _target ) ) != GTK_SHADOW_IN )
         { return; }
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::InnerShadowData::registerChild -"
+            << "Carbon::InnerShadowData::registerChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -131,9 +131,9 @@ namespace Oxygen
         ChildDataMap::iterator iter( _childrenData.find( widget ) );
         if( iter == _childrenData.end() ) return;
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::InnerShadowData::unregisterChild -"
+            << "Carbon::InnerShadowData::unregisterChild -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -155,9 +155,9 @@ namespace Oxygen
         // remove compositing flag
         GdkWindow* window( gtk_widget_get_window( widget ) );
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::InnerShadowData::ChildData::disconnect -"
+            << "Carbon::InnerShadowData::ChildData::disconnect -"
             << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << " window: " << window
             << std::endl;
@@ -173,9 +173,9 @@ namespace Oxygen
     //____________________________________________________________________________________________
     gboolean InnerShadowData::childUnrealizeNotifyEvent( GtkWidget* widget, gpointer data )
     {
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::InnerShadowData::childUnrealizeNotifyEvent -"
+            << "Carbon::InnerShadowData::childUnrealizeNotifyEvent -"
             << " " << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << std::endl;
         #endif
@@ -191,8 +191,8 @@ namespace Oxygen
         GtkWidget* child=gtk_bin_get_child(GTK_BIN(widget));
         GdkWindow* window=gtk_widget_get_window(child);
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::InnerShadowData::targetExposeEvent -"
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::InnerShadowData::targetExposeEvent -"
             << " widget: " << widget << " (" << G_OBJECT_TYPE_NAME(widget) << ")"
             << " child: " << child << " (" << G_OBJECT_TYPE_NAME(child) << ")"
             << " path: " << Gtk::gtk_widget_path( child )
@@ -202,8 +202,8 @@ namespace Oxygen
 
         if(!gdk_window_get_composited(window))
         {
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::InnerShadowData::targetExposeEvent - Window isn't composite. Doing nohing\n";
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::InnerShadowData::targetExposeEvent - Window isn't composite. Doing nohing\n";
             #endif
             return FALSE;
         }
@@ -226,7 +226,7 @@ namespace Oxygen
         gdk_cairo_set_source_window( context, window, allocation.x, allocation.y );
         cairo_paint(context);
 
-        #if OXYGEN_DEBUG_INNERSHADOWS
+        #if CARBON_DEBUG_INNERSHADOWS
         // Show updated parts in random color
         cairo_rectangle(context,allocation.x,allocation.y,allocation.width,allocation.height);
         double red=((double)rand())/RAND_MAX;
@@ -296,8 +296,8 @@ namespace Oxygen
                 if(GTK_IS_BOX(box) && GTK_IS_FRAME(frame=gtk_widget_get_parent(box)) &&
                        gtk_frame_get_shadow_type(GTK_FRAME(frame))==GTK_SHADOW_IN)
                 {
-                    #if OXYGEN_DEBUG
-                    std::cerr << "Oxygen::InnerShadowData::targetExposeEvent: Box children: " << GTK_CONTAINER(box) << std::endl;
+                    #if CARBON_DEBUG
+                    std::cerr << "Carbon::InnerShadowData::targetExposeEvent: Box children: " << GTK_CONTAINER(box) << std::endl;
                     #endif
                     // make sure GtkScrolledWindow is the only visible child
                     GList* children=gtk_container_get_children(GTK_CONTAINER(box));
@@ -314,7 +314,7 @@ namespace Oxygen
                     GtkAllocation frameAlloc;
                     if(gtk_widget_translate_coordinates(frame,widget,0,0,&frameX,&frameY))
                     {
-                        #if OXYGEN_DEBUG
+                        #if CARBON_DEBUG
                         std::cerr << "coords translation: x=" << frameX << "; y=" << frameY << std::endl;
                         #endif
                         gtk_widget_get_allocation(frame,&frameAlloc);
@@ -327,8 +327,8 @@ namespace Oxygen
 
                 } else {
 
-                    #if OXYGEN_DEBUG
-                    std::cerr << "Oxygen::InnerShadowData::targetExposeEvent - Shadow type isn't GTK_SHADOW_IN, so not drawing the shadow in expose-event handler\n";
+                    #if CARBON_DEBUG
+                    std::cerr << "Carbon::InnerShadowData::targetExposeEvent - Shadow type isn't GTK_SHADOW_IN, so not drawing the shadow in expose-event handler\n";
                     #endif
                     return FALSE;
 

@@ -1,7 +1,7 @@
-#ifndef oxygenstyle_h
-#define oxygenstyle_h
+#ifndef carbonstyle_h
+#define carbonstyle_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -21,26 +21,26 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenanimations.h"
-#include "oxygenanimationdata.h"
-#include "oxygenanimationmodes.h"
-#include "oxygenargbhelper.h"
-#include "oxygencairocontext.h"
-#include "oxygengeometry.h"
-#include "oxygengtkcellinfo.h"
-#include "oxygengtkgap.h"
-#include "oxygenloghandler.h"
-#include "oxygenmetrics.h"
-#include "oxygenqtsettings.h"
-#include "oxygenshadowhelper.h"
-#include "oxygenstylehelper.h"
-#include "oxygenstyleoptions.h"
-#include "oxygentaboptions.h"
-#include "oxygentileset.h"
-#include "oxygenwidgetexplorer.h"
-#include "oxygenwindecooptions.h"
-#include "oxygenwindecobutton.h"
-#include "oxygenwindowmanager.h"
+#include "carbonanimations.h"
+#include "carbonanimationdata.h"
+#include "carbonanimationmodes.h"
+#include "carbonargbhelper.h"
+#include "carboncairocontext.h"
+#include "carbongeometry.h"
+#include "carbongtkcellinfo.h"
+#include "carbongtkgap.h"
+#include "carbonloghandler.h"
+#include "carbonmetrics.h"
+#include "carbonqtsettings.h"
+#include "carbonshadowhelper.h"
+#include "carbonstylehelper.h"
+#include "carbonstyleoptions.h"
+#include "carbontaboptions.h"
+#include "carbontileset.h"
+#include "carbonwidgetexplorer.h"
+#include "carbonwindecooptions.h"
+#include "carbonwindecobutton.h"
+#include "carbonwindowmanager.h"
 
 #include <gdk/gdk.h>
 
@@ -48,7 +48,7 @@
 #include <X11/Xdefs.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! handle all plainting

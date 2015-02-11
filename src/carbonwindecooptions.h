@@ -1,8 +1,8 @@
-#ifndef oxygenwindecooptions_h
-#define oxygenwindecooptions_h
+#ifndef carbonwindecooptions_h
+#define carbonwindecooptions_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,9 +21,9 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwindecobutton.h"
+#include "carbonwindecobutton.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! window decoration options
@@ -65,7 +65,7 @@ namespace Oxygen
         int getMetric(Metric wm);
 
         //! get button size
-        // all buttons are of the same size in oxygen, so no argument in internal function
+        // all buttons are of the same size in carbon, so no argument in internal function
         int getButtonSize();
 
     }

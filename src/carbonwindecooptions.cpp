@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2011 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -19,11 +19,11 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwindecooptions.h"
-#include "oxygenstyle.h"
-#include "oxygenwindowshadow.h"
+#include "carbonwindecooptions.h"
+#include "carbonstyle.h"
+#include "carbonwindowshadow.h"
 
-namespace Oxygen
+namespace Carbon
 {
     namespace WinDeco
     {
@@ -112,7 +112,7 @@ namespace Oxygen
 
         int getButtonSize()
         {
-            // in oxygen all buttons have the same size
+            // in carbon all buttons have the same size
             return Style::instance().settings().buttonSize();
         }
     }

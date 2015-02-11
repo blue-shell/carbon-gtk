@@ -1,7 +1,7 @@
-#ifndef oxygenscrollbarstatedata_h
-#define oxygenscrollbarstatedata_h
+#ifndef carbonscrollbarstatedata_h
+#define carbonscrollbarstatedata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "../oxygengtkutils.h"
-#include "oxygentimeline.h"
+#include "../carbongtkutils.h"
+#include "carbontimeline.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! track scrollbar arrow state changes events
     class ScrollBarStateData

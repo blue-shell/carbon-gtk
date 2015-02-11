@@ -1,7 +1,7 @@
-#ifndef oxygenwindecobutton_h
-#define oxygenwindecobutton_h
+#ifndef carbonwindecobutton_h
+#define carbonwindecobutton_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -21,8 +21,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencairocontext.h"
-namespace Oxygen
+#include "carboncairocontext.h"
+namespace Carbon
 {
 
     // forward declarations

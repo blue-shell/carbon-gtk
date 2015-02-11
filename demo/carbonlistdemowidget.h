@@ -1,8 +1,8 @@
-#ifndef oxygenlistdemowidget_h
-#define oxygenlistdemowidget_h
+#ifndef carbonlistdemowidget_h
+#define carbonlistdemowidget_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -24,9 +24,9 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendemowidget.h"
+#include "carbondemowidget.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     class ListDemoWidget: public DemoWidget

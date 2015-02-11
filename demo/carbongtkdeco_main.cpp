@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -25,7 +25,7 @@
 #include <gtk/gtk.h>
 #include <dlfcn.h>
 #include <string>
-#include "oxygenversion.h"
+#include "carbonversion.h"
 
 enum WinDecoOptions
 {
@@ -124,7 +124,7 @@ gboolean initLib()
     char* moduleDir=gtk_rc_get_module_dir();
     if(moduleDir)
     {
-        std::string libpath(moduleDir+std::string("/liboxygen-gtk.so"));
+        std::string libpath(moduleDir+std::string("/libcarbon-gtk.so"));
         g_free(moduleDir);
         library=dlopen(libpath.c_str(),RTLD_LAZY);
         bool success=false;
@@ -330,7 +330,7 @@ int main( int argc, char** argv )
     };
 
     GError *error = 0L;
-    GOptionContext* context( g_option_context_new( "- Gtk+ widgets preview for oxygen" ) );
+    GOptionContext* context( g_option_context_new( "- Gtk+ widgets preview for carbon" ) );
     g_option_context_add_main_entries(context, entries, 0L );
     g_option_context_add_group (context, gtk_get_option_group( TRUE ) );
     g_option_context_parse( context, &argc, &argv, &error );
@@ -345,7 +345,7 @@ int main( int argc, char** argv )
         GtkWidget* window = gtk_window_new( GTK_WINDOW_TOPLEVEL );
         gtk_widget_destroy( window );
 
-        Oxygen::Version::print();
+        Carbon::Version::print();
         return 0;
     }
 
@@ -377,7 +377,7 @@ int main( int argc, char** argv )
     gtk_window_move( GTK_WINDOW(mw0), 300, 320);
     gtk_window_move( GTK_WINDOW(mw1), 300, 320);
 
-    // FIXME: this call crashes in Oxygen::StyleHelper::initializeRefSurface()
+    // FIXME: this call crashes in Carbon::StyleHelper::initializeRefSurface()
     // if done right after gtk_init() call, i.e. until any widget is created
     getMetrics();
 

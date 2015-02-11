@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -21,14 +21,14 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendemodialog.h"
-#include "oxygeninputdemowidget.h"
-#include "oxygeninfowidget.h"
-#include "oxygenbuttondemowidget.h"
-#include "oxygenframedemowidget.h"
-#include "oxygenlistdemowidget.h"
-#include "oxygensliderdemowidget.h"
-#include "oxygentabdemowidget.h"
+#include "carbondemodialog.h"
+#include "carboninputdemowidget.h"
+#include "carboninfowidget.h"
+#include "carbonbuttondemowidget.h"
+#include "carbonframedemowidget.h"
+#include "carbonlistdemowidget.h"
+#include "carbonsliderdemowidget.h"
+#include "carbontabdemowidget.h"
 
 #include <gdk/gdkkeysyms.h>
 
@@ -40,7 +40,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_____________________________________________
@@ -50,7 +50,7 @@ namespace Oxygen
         // create main widget
         _mainWidget = gtk_window_new( GTK_WINDOW_TOPLEVEL );
         gtk_window_set_default_size( GTK_WINDOW( _mainWidget ), 630, 500 );
-        gtk_window_set_title( GTK_WINDOW( _mainWidget ), "Oxygen-gtk Demo" );
+        gtk_window_set_title( GTK_WINDOW( _mainWidget ), "Carbon-gtk Demo" );
         gtk_container_set_border_width( GTK_CONTAINER( _mainWidget ), 10 );
 
         // vertical container
@@ -248,7 +248,7 @@ namespace Oxygen
 
         // update window title
         std::ostringstream what;
-        what << widget->name() << " - Oxygen-gtk Demo";
+        what << widget->name() << " - Carbon-gtk Demo";
         gtk_window_set_title( GTK_WINDOW( dialog._mainWidget ), what.str().c_str() );
     }
 

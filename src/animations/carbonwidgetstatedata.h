@@ -1,7 +1,7 @@
-#ifndef oxygenwidgetstatedata_h
-#define oxygenwidgetstatedata_h
+#ifndef carbonwidgetstatedata_h
+#define carbonwidgetstatedata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygentimeline.h"
-#include "../oxygengtkutils.h"
+#include "carbontimeline.h"
+#include "../carbongtkutils.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! track widget state changes events
     class WidgetStateData

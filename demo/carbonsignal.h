@@ -1,8 +1,8 @@
-#ifndef oxygensignal_h
-#define oxygensignal_h
+#ifndef carbonsignal_h
+#define carbonsignal_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -25,7 +25,7 @@
 #include <cassert>
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
     //! handles gtk signal connections
     class Signal

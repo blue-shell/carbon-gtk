@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * based on the Null Theme Engine for Gtk+.
@@ -21,11 +21,11 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenbuttondemowidget.h"
+#include "carbonbuttondemowidget.h"
 
 #include <string>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //____________________________________________________
@@ -120,7 +120,7 @@ namespace Oxygen
                 gtk_table_attach( GTK_TABLE( table ), button, 1, 2, 1, 2, GTK_FILL, GTK_FILL, 2, 0  );
 
                 GtkIconTheme* theme( gtk_icon_theme_get_default() );
-                GdkPixbuf* icon = gtk_icon_theme_load_icon( theme, "oxygen", 16, (GtkIconLookupFlags) 0, 0L );
+                GdkPixbuf* icon = gtk_icon_theme_load_icon( theme, "carbon", 16, (GtkIconLookupFlags) 0, 0L );
                 if(icon)
                 {
                     GtkWidget* image( gtk_image_new_from_pixbuf( icon ) );

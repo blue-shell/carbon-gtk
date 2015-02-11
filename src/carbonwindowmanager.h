@@ -1,8 +1,8 @@
-#ifndef oxygenwindowmanager_h
-#define oxygenwindowmanager_h
+#ifndef carbonwindowmanager_h
+#define carbonwindowmanager_h
 
 /*
-* oxygenwindowmanager.h
+* carbonwindowmanager.h
 * pass some window mouse press/release/move event actions to window manager
 * -------------------
 *
@@ -28,18 +28,18 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygendatamap.h"
-#include "oxygengtkutils.h"
-#include "oxygenhook.h"
-#include "oxygensignal.h"
-#include "oxygentimer.h"
+#include "carbondatamap.h"
+#include "carbongtkutils.h"
+#include "carbonhook.h"
+#include "carbonsignal.h"
+#include "carbontimer.h"
 
 #include <gtk/gtk.h>
 #include <algorithm>
 #include <string>
 #include <vector>
 
-namespace Oxygen
+namespace Carbon
 {
 
     class WindowManager

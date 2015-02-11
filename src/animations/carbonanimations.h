@@ -1,8 +1,8 @@
-#ifndef oxygenanimations_h
-#define oxygenanimations_h
+#ifndef carbonanimations_h
+#define carbonanimations_h
 
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,41 +21,41 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenarrowstateengine.h"
-#include "oxygenbackgroundhintengine.h"
-#include "oxygenbaseengine.h"
-#include "oxygencomboengine.h"
-#include "oxygencomboboxengine.h"
-#include "oxygencomboboxentryengine.h"
-#include "oxygendialogengine.h"
-#include "oxygenflatwidgetengine.h"
-#include "oxygengroupboxengine.h"
-#include "oxygengroupboxlabelengine.h"
-#include "oxygenhook.h"
-#include "oxygenhoverengine.h"
-#include "oxygenmainwindowengine.h"
-#include "oxygenmenubarstateengine.h"
-#include "oxygenmenuitemengine.h"
-#include "oxygenmenustateengine.h"
-#include "oxygenpanedengine.h"
-#include "oxygenscrollbarengine.h"
-#include "oxygenscrollbarstateengine.h"
-#include "oxygenscrolledwindowengine.h"
-#include "oxygeninnershadowengine.h"
-#include "oxygensignal.h"
-#include "oxygentabwidgetengine.h"
-#include "oxygentabwidgetstateengine.h"
-#include "oxygentoolbarstateengine.h"
-#include "oxygentreeviewengine.h"
-#include "oxygentreeviewstateengine.h"
-#include "oxygenwidgetsizeengine.h"
-#include "oxygenwidgetstateengine.h"
+#include "carbonarrowstateengine.h"
+#include "carbonbackgroundhintengine.h"
+#include "carbonbaseengine.h"
+#include "carboncomboengine.h"
+#include "carboncomboboxengine.h"
+#include "carboncomboboxentryengine.h"
+#include "carbondialogengine.h"
+#include "carbonflatwidgetengine.h"
+#include "carbongroupboxengine.h"
+#include "carbongroupboxlabelengine.h"
+#include "carbonhook.h"
+#include "carbonhoverengine.h"
+#include "carbonmainwindowengine.h"
+#include "carbonmenubarstateengine.h"
+#include "carbonmenuitemengine.h"
+#include "carbonmenustateengine.h"
+#include "carbonpanedengine.h"
+#include "carbonscrollbarengine.h"
+#include "carbonscrollbarstateengine.h"
+#include "carbonscrolledwindowengine.h"
+#include "carboninnershadowengine.h"
+#include "carbonsignal.h"
+#include "carbontabwidgetengine.h"
+#include "carbontabwidgetstateengine.h"
+#include "carbontoolbarstateengine.h"
+#include "carbontreeviewengine.h"
+#include "carbontreeviewstateengine.h"
+#include "carbonwidgetsizeengine.h"
+#include "carbonwidgetstateengine.h"
 
 #include <gtk/gtk.h>
 #include <vector>
 #include <map>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //! forward declaration

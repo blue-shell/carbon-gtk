@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 * Copyright (c) 2010 Ruslan Kabatsayev <b7.10110111@gmail.com>
 *
@@ -21,8 +21,8 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenargbhelper.h"
-#include "oxygengtktypenames.h"
+#include "carbonargbhelper.h"
+#include "carbongtktypenames.h"
 #include "config.h"
 
 #include <gtk/gtk.h>
@@ -30,15 +30,15 @@
 #include <cassert>
 #include <iostream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //__________________________________________________________________
     ArgbHelper::ArgbHelper( void ):
         _hooksInitialized( false )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ArgbHelper::ArgbHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ArgbHelper::ArgbHelper" << std::endl;
         #endif
     }
 
@@ -47,8 +47,8 @@ namespace Oxygen
     ArgbHelper::~ArgbHelper( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ArgbHelper::~ArgbHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ArgbHelper::~ArgbHelper" << std::endl;
         #endif
 
         // disconnect hooks
@@ -108,8 +108,8 @@ namespace Oxygen
             )
         {
 
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::ArgbHelper::styleSetHook - "
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::ArgbHelper::styleSetHook - "
                 << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
                 << " hint: " << Gtk::TypeNames::windowTypeHint( hint )
                 << std::endl;

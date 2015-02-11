@@ -1,7 +1,7 @@
-#ifndef oxygenscrollbarengine_h
-#define oxygenscrollbarengine_h
+#ifndef carbonscrollbarengine_h
+#define carbonscrollbarengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,13 +21,13 @@
 */
 
 
-#include "oxygengenericengine.h"
-#include "oxygendatamap.h"
-#include "oxygenscrollbardata.h"
+#include "carbongenericengine.h"
+#include "carbondatamap.h"
+#include "carbonscrollbardata.h"
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

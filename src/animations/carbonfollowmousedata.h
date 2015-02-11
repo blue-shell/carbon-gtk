@@ -1,7 +1,7 @@
-#ifndef oxygenfollowmousedata_h
-#define oxygenfollowmousedata_h
+#ifndef carbonfollowmousedata_h
+#define carbonfollowmousedata_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,12 +20,12 @@
 * MA 02110-1301, USA.
 */
 
-#include "../oxygengtkutils.h"
-#include "oxygentimeline.h"
+#include "../carbongtkutils.h"
+#include "carbontimeline.h"
 
 #include <gdk/gdk.h>
 
-namespace Oxygen
+namespace Carbon
 {
     //! stores data needed for follow-mouse animations
     class FollowMouseData

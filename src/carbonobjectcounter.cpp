@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2012 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,10 +18,10 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenobjectcounter.h"
-#include "oxygenobjectcountermap.h"
+#include "carbonobjectcounter.h"
+#include "carbonobjectcountermap.h"
 
-namespace Oxygen
+namespace Carbon
 {
     //____________________________________________________________
     ObjectCounter::ObjectCounter( const std::string& name ):

@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2011 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,13 +18,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygencairocontext.h"
-#include "oxygencairoutils.h"
+#include "carboncairocontext.h"
+#include "carboncairoutils.h"
 #include "config.h"
-#include "oxygengtkutils.h"
-#include "oxygenmetrics.h"
-#include "oxygenrgba.h"
-#include "oxygenshadowhelper.h"
+#include "carbongtkutils.h"
+#include "carbonmetrics.h"
+#include "carbonrgba.h"
+#include "carbonshadowhelper.h"
 
 #include "config.h"
 
@@ -38,7 +38,7 @@
 #include <X11/Xatom.h>
 #endif
 
-namespace Oxygen
+namespace Carbon
 {
 
     const char* const ShadowHelper::netWMShadowAtomName( "_KDE_NET_WM_SHADOW" );
@@ -54,16 +54,16 @@ namespace Oxygen
         _atom = None;
         #endif
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::ShadowHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::ShadowHelper" << std::endl;
         #endif
     }
 
     //______________________________________________
     ShadowHelper::~ShadowHelper( void )
     {
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::~ShadowHelper" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::~ShadowHelper" << std::endl;
         #endif
 
         for( WidgetMap::iterator iter = _widgets.begin(); iter != _widgets.end(); ++iter )
@@ -77,8 +77,8 @@ namespace Oxygen
     void ShadowHelper::reset( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::reset" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::reset" << std::endl;
         #endif
 
         #ifdef GDK_WINDOWING_X11
@@ -110,8 +110,8 @@ namespace Oxygen
     {
        if( _hooksInitialized ) return;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::initializeHooks" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::initializeHooks" << std::endl;
         #endif
 
         // install hooks
@@ -124,8 +124,8 @@ namespace Oxygen
     void ShadowHelper::initialize( const ColorUtils::Rgba& color, const WindowShadow& shadow )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::initialize" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::initialize" << std::endl;
         #endif
 
         reset();
@@ -233,8 +233,8 @@ namespace Oxygen
     void ShadowHelper::createPixmapHandles( void )
     {
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::ShadowHelper::createPixmapHandles" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::ShadowHelper::createPixmapHandles" << std::endl;
         #endif
 
         #ifdef GDK_WINDOWING_X11
@@ -247,7 +247,7 @@ namespace Oxygen
             if( !screen )
             {
 
-                #if OXYGEN_DEBUG
+                #if CARBON_DEBUG
                 std::cerr << "ShadowHelper::createPixmapHandles - screen is NULL" << std::endl;
                 #endif
 
@@ -259,7 +259,7 @@ namespace Oxygen
             if( !display )
             {
 
-                #if OXYGEN_DEBUG
+                #if CARBON_DEBUG
                 std::cerr << "ShadowHelper::createPixmapHandles - display is NULL" << std::endl;
                 #endif
 
@@ -283,7 +283,7 @@ namespace Oxygen
             if( !gdk_screen_get_rgba_visual( screen ) )
             {
 
-                #if OXYGEN_DEBUG
+                #if CARBON_DEBUG
                 std::cerr << "ShadowHelper::createPixmapHandles - no valid RGBA visual found." << std::endl;
                 #endif
 
@@ -372,9 +372,9 @@ namespace Oxygen
 
         #ifdef GDK_WINDOWING_X11
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::ShadowHelper::installX11Shadows - "
+            << "Carbon::ShadowHelper::installX11Shadows - "
             << " widget: " << widget
             << " wid: " << GDK_WINDOW_XID( gtk_widget_get_window( widget ) )
             << std::endl;
@@ -412,7 +412,7 @@ namespace Oxygen
 
                 /*
                 for menus, need to shrink top and bottom shadow size, since body is done likely with respect to real size
-                in painting method (Oxygen::Style::renderMenuBackground)
+                in painting method (Carbon::Style::renderMenuBackground)
                 */
                 data.push_back( _size - Menu_VerticalOffset );
                 data.push_back( _size );

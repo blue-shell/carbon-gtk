@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -23,7 +23,7 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygengtkicons.h"
+#include "carbongtkicons.h"
 #include "config.h"
 
 #include <algorithm>
@@ -33,7 +33,7 @@
 
 #include <gtk/gtk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________
@@ -93,7 +93,7 @@ namespace Oxygen
         std::ifstream in( filename.c_str() );
         if( !in )
         {
-            std::cerr << "Oxygen::GtkIcons::loadTranslations - could not open " << filename << std::endl;
+            std::cerr << "Carbon::GtkIcons::loadTranslations - could not open " << filename << std::endl;
             return;
         }
 
@@ -121,8 +121,8 @@ namespace Oxygen
 
         if( (!_dirty) && _pathList == pathList ) return _rc;
 
-        #if OXYGEN_DEBUG
-        std::cerr << "Oxygen::GtkIcons::generate - regenerating translation tables" << std::endl;
+        #if CARBON_DEBUG
+        std::cerr << "Carbon::GtkIcons::generate - regenerating translation tables" << std::endl;
         #endif
 
         _pathList = pathList;
@@ -149,7 +149,7 @@ namespace Oxygen
 
         // pass to settings
         GtkSettings* settings( gtk_settings_get_default() );
-        gtk_settings_set_string_property( settings, "gtk-icon-sizes", iconSizesStr.str().c_str(), "oxygen-gtk" );
+        gtk_settings_set_string_property( settings, "gtk-icon-sizes", iconSizesStr.str().c_str(), "carbon-gtk" );
 
         // generate pixmap path
         // this must be passed to gtk before any icon settings, otherwise
@@ -158,8 +158,8 @@ namespace Oxygen
         pixmapPathStr << "pixmap_path \"";
         for( PathList::const_iterator iter = pathList.begin(); iter != pathList.end(); ++iter )
         {
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::GtkIcons::generate - adding path: " << *iter << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::GtkIcons::generate - adding path: " << *iter << std::endl;
             #endif
 
             if( iter != pathList.begin() ) pixmapPathStr << ":";
@@ -195,9 +195,9 @@ namespace Oxygen
         std::string stock( generateString( "gtk-clear", "actions/edit-clear-locationbar-rtl.png", pathList ) );
         if( !stock.empty() )
         {
-            _rc.addSection( "oxygen-icons-editor", Gtk::RC::defaultSection() );
+            _rc.addSection( "carbon-icons-editor", Gtk::RC::defaultSection() );
             _rc.addToCurrentSection( stock );
-            _rc.addToRootSection( "class \"*Entry*\" style \"oxygen-icons-editor\"" );
+            _rc.addToRootSection( "class \"*Entry*\" style \"carbon-icons-editor\"" );
         }
 
         _dirty = false;

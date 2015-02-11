@@ -1,7 +1,7 @@
-#ifndef oxygenflatwidgetengine_h
-#define oxygenflatwidgetengine_h
+#ifndef carbonflatwidgetengine_h
+#define carbonflatwidgetengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -20,13 +20,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenbaseengine.h"
+#include "carbonbaseengine.h"
 
 #include <gtk/gtk.h>
 #include <cassert>
 #include <set>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;

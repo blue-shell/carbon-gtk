@@ -1,7 +1,7 @@
-#ifndef oxygenrgba_h
-#define oxygenrgba_h
+#ifndef carbonrgba_h
+#define carbonrgba_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -33,7 +33,7 @@
 #include <vector>
 #include <gdk/gdk.h>
 
-namespace Oxygen
+namespace Carbon
 {
 
     namespace ColorUtils

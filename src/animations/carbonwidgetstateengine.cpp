@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -18,18 +18,18 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenwidgetstateengine.h"
+#include "carbonwidgetstateengine.h"
 
-namespace Oxygen
+namespace Carbon
 {
 
     //________________________________________________________
     bool WidgetStateEngine::registerWidget( GtkWidget* widget, AnimationModes modes, const StyleOptions& options )
     {
 
-        #if OXYGEN_DEBUG
+        #if CARBON_DEBUG
         std::cerr
-            << "Oxygen::WidgetStateEngine::registerWidget - "
+            << "Carbon::WidgetStateEngine::registerWidget - "
             << widget << " (" << G_OBJECT_TYPE_NAME( widget ) << ")"
             << " mode: " << modes
             << std::endl;

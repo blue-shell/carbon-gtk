@@ -1,5 +1,5 @@
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * inspired notably from kdelibs/kdeui/color/kcolorutils.h
@@ -23,13 +23,13 @@
 * MA 02110-1301, USA.
 */
 
-#include "oxygenoptionmap.h"
+#include "carbonoptionmap.h"
 #include "config.h"
 
 #include <iostream>
 #include <fstream>
 
-namespace Oxygen
+namespace Carbon
 {
 
     //_________________________________________________________
@@ -67,7 +67,7 @@ namespace Oxygen
             // insert new option in map
             Option option( currentLine.substr( 0, mid ), currentLine.substr( mid+1 ) );
 
-            #if OXYGEN_DEBUG
+            #if CARBON_DEBUG
             option.setFile( filename );
             #endif
 
@@ -139,8 +139,8 @@ namespace Oxygen
         const_iterator iter( find( section ) );
         if( iter == end() )
         {
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::OptionMap::getOption - could not find section " << section << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::OptionMap::getOption - could not find section " << section << std::endl;
             #endif
 
             return Option();
@@ -150,8 +150,8 @@ namespace Oxygen
         Option::Set::const_iterator optionIter( iter->second.find( Option(tag) ) );
         if( optionIter == iter->second.end() )
         {
-            #if OXYGEN_DEBUG
-            std::cerr << "Oxygen::OptionMap::getOption - could not find tag " << tag << std::endl;
+            #if CARBON_DEBUG
+            std::cerr << "Carbon::OptionMap::getOption - could not find tag " << tag << std::endl;
             #endif
 
             return Option();

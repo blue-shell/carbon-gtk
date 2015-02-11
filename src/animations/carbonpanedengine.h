@@ -1,7 +1,7 @@
-#ifndef oxygenpanedengine_h
-#define oxygenpanedengine_h
+#ifndef carbonpanedengine_h
+#define carbonpanedengine_h
 /*
-* this file is part of the oxygen gtk engine
+* this file is part of the carbon gtk engine
 * Copyright (c) 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
 *
 * This  library is free  software; you can  redistribute it and/or
@@ -21,13 +21,13 @@
 */
 
 
-#include "oxygengenericengine.h"
-#include "oxygenpaneddata.h"
+#include "carbongenericengine.h"
+#include "carbonpaneddata.h"
 
 #include <gtk/gtk.h>
 #include <set>
 
-namespace Oxygen
+namespace Carbon
 {
     //! forward declaration
     class Animations;
