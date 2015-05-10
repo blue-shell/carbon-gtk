@@ -1192,7 +1192,6 @@ namespace Carbon
     //____________________________________________________________________________________
     void Style::renderHoleMask( cairo_t* context, gint x, gint y, gint w, gint h, TileSet::Tiles tiles, gint sideMargin )
     {
-
         GdkRectangle mask = {x+2, y+1, w-4, h-3 };
         const double maskRadius = 3.5;
         Corners corners( CornersNone );
@@ -1331,7 +1330,6 @@ namespace Carbon
     //__________________________________________________________________
     void Style::drawFloatFrame( cairo_t* context, GdkWindow* window, GdkRectangle* clipRect, gint x, gint y, gint w, gint h, const StyleOptions& options, Palette::Role role ) const
     {
-
         // define colors
         ColorUtils::Rgba base(_settings.palette().color( role ) );
         ColorUtils::Rgba light( ColorUtils::lightColor( base ) );
@@ -1939,7 +1937,6 @@ namespace Carbon
         const AnimationData& animationData,
         TileSet::Tiles tiles )
     {
-
         // do nothing if not enough room
         if( w < 14 || h < 14 )  return;
 
@@ -2676,7 +2673,7 @@ namespace Carbon
         */
 
         // enable gradient if XID is not passed
-        bool gradient=false;
+        bool gradient=_settings.useBackgroundGradient();
 
         const int buttonSpacing(WinDeco::getMetric(WinDeco::ButtonSpacing));
         titleIndentLeft+=2*buttonSpacing;
