@@ -1962,7 +1962,7 @@ namespace Carbon
         if( fill.isValid() ) tiles |= TileSet::Center;
 
         const ColorUtils::Rgba glow( holeShadowColor( options, animationData ) );
-        if( glow.isValid() ) _helper.holeFocused( base, fill, glow ).render( context, x, y, w, h, tiles );
+        if( glow.isValid() && false) _helper.holeFocused( base, fill, glow ).render( context, x, y, w, h, tiles );
         else _helper.hole( base, fill ).render( context, x, y, w, h, tiles );
 
     }
