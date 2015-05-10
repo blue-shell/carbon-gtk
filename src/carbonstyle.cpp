@@ -2676,7 +2676,7 @@ namespace Carbon
         */
 
         // enable gradient if XID is not passed
-        bool gradient=true;
+        bool gradient=false;
 
         const int buttonSpacing(WinDeco::getMetric(WinDeco::ButtonSpacing));
         titleIndentLeft+=2*buttonSpacing;
