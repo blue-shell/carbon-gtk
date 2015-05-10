@@ -1032,7 +1032,7 @@ namespace Carbon
         _backgroundPixmap = _carbon.getValue( "[Common]", "BackgroundPixmap", "" );
 
         // background gradient
-        _useBackgroundGradient = ( _carbon.getValue( "[Common]", "UseBackgroundGradient", "true" ) == "true" );
+        _useBackgroundGradient = ( _carbon.getValue( "[Common]", "UseBackgroundGradient", "false" ) == "true" );
 
         // checkbox style
         _checkBoxStyle = (_carbon.getValue( "[Style]", "CheckBoxStyle", "CS_CHECK" ) == "CS_CHECK") ? CS_CHECK:CS_X;
