@@ -133,6 +133,7 @@ namespace Carbon
     //________________________________________________________________________________
     bool TreeViewData::setHovered( GtkWidget* widget, bool value )
     {
+        return true;
         if( !HoverData::setHovered( widget, value ) ) return false;
         if( !value ) clearPosition();
         return true;
