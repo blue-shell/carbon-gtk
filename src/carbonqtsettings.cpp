@@ -65,7 +65,7 @@ namespace Carbon
         _kdeFallbackIconTheme( "gnome" ),
         _inactiveChangeSelectionColor( false ),
         _useIconEffect( true ),
-        _useBackgroundGradient( true ),
+        _useBackgroundGradient( false ),
         _checkBoxStyle( CS_CHECK ),
         _tabStyle( TS_SINGLE ),
         _scrollBarAddLineButtons( 2 ),
