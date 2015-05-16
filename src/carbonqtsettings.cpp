@@ -1076,7 +1076,7 @@ namespace Carbon
         else _menuHighlightMode = MM_DARK;
 
         // window drag mode
-        _windowDragEnabled = _carbon.getOption( "[Style]", "WindowDragEnabled" ).toVariant<std::string>("true") == "true";
+        _windowDragEnabled = _carbon.getOption( "[Style]", "WindowDragEnabled" ).toVariant<std::string>("false") == "true";
 
         std::string windowDragMode( _carbon.getOption( "[Style]", "WindowDragMode" ).toVariant<std::string>("WD_FULL") );
         if( windowDragMode == "WD_MINIMAL" ) _windowDragMode = WD_MINIMAL;
