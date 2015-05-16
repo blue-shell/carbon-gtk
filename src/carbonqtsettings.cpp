@@ -1086,8 +1086,8 @@ namespace Carbon
         _useWMMoveResize = _carbon.getOption( "[Style]", "UseWMMoveResize" ).toVariant<std::string>("true") == "true";
 
         // animations
-        _animationsEnabled = ( _carbon.getOption( "[Style]", "AnimationsEnabled" ).toVariant<std::string>("true") == "true" );
-        _genericAnimationsEnabled = ( _carbon.getOption( "[Style]", "GenericAnimationsEnabled" ).toVariant<std::string>("true") == "true" );
+        _animationsEnabled = ( _carbon.getOption( "[Style]", "AnimationsEnabled" ).toVariant<std::string>("false") == "true" );
+        _genericAnimationsEnabled = ( _carbon.getOption( "[Style]", "GenericAnimationsEnabled" ).toVariant<std::string>("false") == "true" );
 
         // menubar animation type
         std::string menuBarAnimationType( _carbon.getValue( "[Style]", "MenuBarAnimationType", "MB_FADE") );
